@@ -1,733 +1,121 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0a0f1e">
-<meta name="description" content="Tiv Downloader — Download video TikTok Full HD tanpa watermark, MP3, slide foto. Gratis, cepat, tanpa login. By PANN.">
-<meta name="keywords" content="download tiktok, tiktok tanpa watermark, tiktok downloader, tiktok mp3, tiktok hd, tiv downloader">
+<meta name="description" content="Tiv Downloader — Download video TikTok Full HD tanpa watermark, MP3, slide foto. Gratis, cepat, tanpa login.">
+<meta name="keywords" content="download tiktok, tiktok tanpa watermark, tiktok downloader, tiktok mp3, tiktok hd">
 <meta name="author" content="PANN">
 <meta name="robots" content="index, follow">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tiv Downloader — Download TikTok Tanpa Watermark HD">
-<meta property="og:description" content="Download video TikTok tanpa watermark, Full HD. Gratis, cepat, tanpa login. By PANN.">
-<meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'><rect width='1200' height='630' fill='%230a0f1e'/><text x='600' y='300' font-size='80' fill='%233b5bff' text-anchor='middle' font-family='sans-serif' font-weight='bold'>Tiv Downloader</text><text x='600' y='380' font-size='36' fill='%23ef4444' text-anchor='middle' font-family='sans-serif'>Download TikTok Tanpa Watermark</text></svg>">
-<meta property="og:url" content="https://reptilia06478-collab.github.io/Tivdownloadloader/">
+<meta property="og:description" content="Download video TikTok tanpa watermark, Full HD. Gratis, cepat, tanpa login.">
+<meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'><rect width='1200' height='630' fill='%230a0f1e'/><text x='600' y='300' font-size='90' fill='%233b5bff' text-anchor='middle' font-family='sans-serif' font-weight='bold'>Tiv Downloader</text><text x='600' y='390' font-size='38' fill='%23ef4444' text-anchor='middle' font-family='sans-serif'>Download TikTok Tanpa Watermark</text></svg>">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tiv Downloader — Download TikTok Tanpa Watermark HD">
-<meta name="twitter:description" content="Download video TikTok tanpa watermark, Full HD. Gratis, cepat, tanpa login. By PANN.">
+<meta name="twitter:description" content="Download video TikTok tanpa watermark, Full HD. Gratis, cepat, tanpa login.">
 
-<link rel="canonical" href="https://reptilia06478-collab.github.io/Tivdownloadloader/">
-
-<title>Tiv Downloader — Download TikTok Tanpa Watermark HD · by PANN</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233b5bff'/><text x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>T</text></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%233b5bff'/><text x='90' y='120' font-size='110' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>T</text></svg>">
+<title>Tiv Downloader — Download TikTok Tanpa Watermark HD</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233b5bff'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>T</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%233b5bff'/><text x='90' y='122' font-size='110' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>T</text></svg>">
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-  :root {
-    --bg: #0a0f1e;
-    --card: rgba(20, 26, 45, 0.6);
-    --card-solid: #141a2d;
-    --border: rgba(59, 91, 255, 0.15);
-    --border-strong: rgba(59, 91, 255, 0.3);
-    --text: #f1f5f9;
-    --text-muted: #94a3b8;
-    --text-dim: #64748b;
-    --blue: #3b5bff;
-    --blue-light: #5b7bff;
-    --red: #ef4444;
-    --red-soft: #f87171;
-    --blue-grad: linear-gradient(135deg, #3b5bff, #5b7bff);
-    --red-grad: linear-gradient(135deg, #ef4444, #f87171);
-    --mix-grad: linear-gradient(135deg, #3b5bff, #ef4444);
-    --radius: 16px;
-    --radius-lg: 24px;
-    --radius-sm: 10px;
-  }
-  html, body { height: 100%; }
-  body {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    padding-bottom: 30px;
-    transition: background 0.3s, color 0.3s;
-  }
-  body.light {
-    --bg: #f1f5f9;
-    --card: rgba(255,255,255,0.85);
-    --card-solid: #ffffff;
-    --border: rgba(59,91,255,0.15);
-    --border-strong: rgba(59,91,255,0.3);
-    --text: #0f172a;
-    --text-muted: #475569;
-    --text-dim: #94a3b8;
-  }
-  #auroraCanvas, #particleCanvas, #starCanvas {
-    position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  }
-  body::before {
-    content: ''; position: fixed; inset: 0;
-    background:
-      radial-gradient(ellipse at 20% 0%, rgba(59,91,255,0.25), transparent 50%),
-      radial-gradient(ellipse at 80% 100%, rgba(239,68,68,0.18), transparent 50%);
-    z-index: 0; pointer-events: none;
-    animation: bgShift 25s ease-in-out infinite alternate;
-  }
-  body.light::before { opacity: 0.3; }
-  @keyframes bgShift { 0% { filter: hue-rotate(0deg); } 100% { filter: hue-rotate(20deg); } }
-
-  .container { max-width: 900px; margin: 0 auto; padding: 20px 16px 40px; position: relative; z-index: 2; }
-  .container-wide { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
-
-  /* NAVBAR */
-  .navbar {
-    position: sticky; top: 0; background: rgba(10,15,30,0.75);
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border); z-index: 100; padding: 10px 0;
-  }
-  body.light .navbar { background: rgba(255,255,255,0.85); }
-  .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
-  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
-  .nav-logo-icon {
-    width: 38px; height: 38px; border-radius: 12px;
-    background: var(--blue-grad); display: flex; align-items: center; justify-content: center;
-    color: white; font-weight: 800; font-size: 18px;
-    box-shadow: 0 4px 16px rgba(59,91,255,0.4);
-    position: relative; overflow: hidden;
-  }
-  .nav-logo-icon::after {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.4), transparent 60%);
-    animation: shine 3s linear infinite;
-  }
-  @keyframes shine { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
-  .nav-logo-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: -0.5px; }
-  .nav-logo-text .red { color: var(--red); }
-  .nav-actions { display: flex; gap: 8px; align-items: center; }
-  .nav-icon-btn {
-    width: 38px; height: 38px; background: rgba(20,26,45,0.7);
-    border: 1px solid var(--border); border-radius: 10px;
-    color: var(--text); cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 15px; transition: all 0.2s; font-family: inherit;
-  }
-  body.light .nav-icon-btn { background: rgba(255,255,255,0.8); }
-  .nav-icon-btn:hover { border-color: var(--blue); transform: translateY(-1px); }
-
-  /* HERO */
-  .hero { text-align: center; padding: 32px 20px 20px; animation: slideUp 0.8s ease-out; }
-  @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-  .hero-label {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 6px 14px; background: rgba(59,91,255,0.15);
-    border: 1px solid rgba(59,91,255,0.3); border-radius: 20px;
-    font-size: 11px; font-weight: 700; color: var(--blue-light);
-    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px;
-  }
-  .hero-label::before {
-    content: ''; width: 6px; height: 6px; border-radius: 50%;
-    background: var(--blue-light); box-shadow: 0 0 10px var(--blue-light);
-    animation: pulse 1.5s ease-in-out infinite;
-  }
-  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
-  .hero h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 38px; font-weight: 700; line-height: 1.15;
-    margin-bottom: 12px; letter-spacing: -1.5px;
-  }
-  .hero h1 .red { color: var(--red); }
-  .hero h1 .blue { background: var(--blue-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  .hero p { font-size: 15px; color: var(--text-muted); max-width: 640px; margin: 0 auto; }
-  @media (max-width: 640px) { .hero h1 { font-size: 28px; } .hero { padding: 24px 16px 16px; } }
-
-  /* DASHBOARD */
-  .dashboard {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 8px; max-width: 600px; margin: 0 auto 16px; padding: 0 16px;
-    animation: slideUp 0.8s ease-out 0.15s both;
-  }
-  .dash-item {
-    background: var(--card); border: 1px solid var(--border);
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border-radius: var(--radius); padding: 10px 8px; text-align: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-  }
-  .dash-value { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--blue-light); }
-  .dash-label { font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; font-weight: 700; }
-
-  /* INSTALL BANNER */
-  .install-banner {
-    display: none;
-    max-width: 800px;
-    margin: 0 auto 16px;
-    padding: 12px 18px;
-    background: var(--blue-grad);
-    border-radius: var(--radius);
-    color: white;
-    font-size: 13px;
-    font-weight: 700;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 8px 24px rgba(59,91,255,0.4);
-    animation: slideDown 0.5s ease-out;
-  }
-  .install-banner.show { display: flex; }
-  .install-banner button {
-    background: rgba(255,255,255,0.25);
-    border: none; color: white;
-    padding: 8px 14px; border-radius: 10px;
-    font-size: 12px; font-weight: 700;
-    cursor: pointer; font-family: inherit;
-  }
-
-  /* DOWNLOAD BOX */
-  .download-box { max-width: 800px; margin: 0 auto 16px; padding: 0 16px; animation: slideUp 0.8s ease-out 0.1s both; }
-  .download-input-wrap {
-    display: flex; gap: 8px; background: var(--card);
-    border: 1px solid var(--border-strong); border-radius: var(--radius-lg);
-    padding: 8px; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 12px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
-    transition: all 0.3s;
-  }
-  body.light .download-input-wrap { box-shadow: 0 12px 48px rgba(59,91,255,0.1); }
-  .download-input-wrap:focus-within {
-    border-color: var(--blue);
-    box-shadow: 0 12px 48px rgba(59,91,255,0.3);
-  }
-  .download-input-wrap input {
-    flex: 1; border: none; outline: none; padding: 12px 14px;
-    font-size: 15px; background: transparent; color: var(--text);
-    font-family: inherit; min-width: 0;
-  }
-  .download-input-wrap input::placeholder { color: var(--text-dim); }
-  .btn-paste {
-    padding: 12px 18px; background: rgba(59,91,255,0.15);
-    border: 1px solid rgba(59,91,255,0.3); border-radius: 18px;
-    color: var(--blue-light); font-size: 14px; font-weight: 700;
-    cursor: pointer; font-family: inherit; transition: all 0.2s; white-space: nowrap;
-  }
-  .btn-paste:hover { background: rgba(59,91,255,0.25); }
-  .btn-download-main {
-    padding: 12px 24px; background: var(--blue-grad); color: white;
-    border: none; border-radius: 18px; font-size: 15px; font-weight: 700;
-    cursor: pointer; font-family: inherit; transition: all 0.2s;
-    box-shadow: 0 4px 16px rgba(59,91,255,0.4); white-space: nowrap;
-  }
-  .btn-download-main:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(59,91,255,0.5); }
-  .btn-download-main:disabled { opacity: 0.6; cursor: not-allowed; }
-  @media (max-width: 600px) {
-    .download-input-wrap { flex-wrap: wrap; }
-    .download-input-wrap input { width: 100%; flex: 1 1 100%; }
-    .btn-paste, .btn-download-main { flex: 1; }
-  }
-
-  .status {
-    margin-top: 10px; padding: 12px 16px; border-radius: 12px;
-    font-size: 14px; display: none; align-items: center; gap: 8px;
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    animation: slideDown 0.3s ease-out;
-  }
-  @keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
-  .status.show { display: flex; }
-  .status.info    { background: rgba(59,91,255,0.15); color: #93b4ff; border: 1px solid rgba(59,91,255,0.3); }
-  .status.error   { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
-  .status.success { background: rgba(34,197,94,0.15); color: #86efac; border: 1px solid rgba(34,197,94,0.3); }
-  body.light .status.info { color: #1d4ed8; }
-  body.light .status.error { color: #b91c1c; }
-  body.light .status.success { color: #15803d; }
-
-  .spinner {
-    display: inline-block; width: 16px; height: 16px;
-    border: 2px solid rgba(255,255,255,0.3); border-top-color: white;
-    border-radius: 50%; animation: spin 0.8s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* LOADING OVERLAY */
-  .loading-overlay {
-    position: fixed; inset: 0; background: rgba(10,15,30,0.85);
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    z-index: 500; display: none; align-items: center; justify-content: center;
-    flex-direction: column; gap: 20px; animation: fadeIn 0.3s ease-out;
-  }
-  body.light .loading-overlay { background: rgba(241,245,249,0.9); }
-  .loading-overlay.show { display: flex; }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-  .loading-spinner-big {
-    width: 70px; height: 70px;
-    border: 4px solid rgba(59,91,255,0.2); border-top-color: var(--blue);
-    border-right-color: var(--red); border-radius: 50%;
-    animation: spin 1s linear infinite; position: relative;
-  }
-  .loading-spinner-big::after {
-    content: ''; position: absolute; inset: 10px;
-    border: 3px solid rgba(239,68,68,0.2); border-bottom-color: var(--red);
-    border-radius: 50%; animation: spin 1.5s linear infinite reverse;
-  }
-  .loading-text { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--blue-light); letter-spacing: 2px; }
-  .loading-progress { width: 260px; height: 4px; background: rgba(59,91,255,0.15); border-radius: 2px; overflow: hidden; }
-  .loading-progress-fill { height: 100%; background: var(--blue-grad); width: 0%; transition: width 0.3s; border-radius: 2px; }
-
-  /* TABS */
-  .tabs {
-    display: flex; gap: 6px; background: var(--card);
-    border: 1px solid var(--border); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border-radius: var(--radius); padding: 6px; margin-bottom: 12px;
-    overflow-x: auto; scrollbar-width: none;
-  }
-  .tabs::-webkit-scrollbar { display: none; }
-  .tab {
-    flex: 1; padding: 10px 14px; background: transparent; border: none;
-    border-radius: var(--radius-sm); color: var(--text-muted);
-    font-size: 13px; font-weight: 700; cursor: pointer;
-    transition: all 0.2s; white-space: nowrap; font-family: inherit;
-  }
-  .tab.active { background: var(--blue-grad); color: white; box-shadow: 0 4px 12px rgba(59,91,255,0.4); }
-  .tab:not(.active):hover { color: var(--text); background: rgba(59,91,255,0.1); }
-
-  .panel { display: none; }
-  .panel.active { display: block; animation: fadeIn 0.3s ease-out; }
-
-  .card {
-    background: var(--card); border: 1px solid var(--border);
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border-radius: var(--radius-lg); padding: 18px; margin-bottom: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
-  }
-  body.light .card { box-shadow: 0 8px 32px rgba(59,91,255,0.08); }
-  .card textarea {
-    width: 100%; min-height: 120px; padding: 14px;
-    background: rgba(10,15,30,0.6); border: 1px solid var(--border);
-    border-radius: var(--radius); color: var(--text);
-    font-family: 'JetBrains Mono', monospace; font-size: 13px;
-    line-height: 1.6; resize: vertical; outline: none; transition: border-color 0.2s;
-  }
-  body.light .card textarea { background: rgba(241,245,249,0.8); }
-  .card textarea:focus { border-color: var(--blue); }
-
-  .input-clean {
-    padding: 12px 14px; background: rgba(10,15,30,0.6);
-    border: 1px solid var(--border); border-radius: var(--radius);
-    color: var(--text); font-size: 14px; font-family: inherit;
-    outline: none; transition: border-color 0.2s;
-  }
-  body.light .input-clean { background: rgba(241,245,249,0.8); }
-  .input-clean:focus { border-color: var(--blue); }
-
-  .btn {
-    padding: 11px 20px; background: var(--blue-grad); color: white;
-    border: none; border-radius: 12px; font-size: 14px; font-weight: 700;
-    cursor: pointer; font-family: inherit; transition: all 0.2s;
-    display: inline-flex; align-items: center; justify-content: center;
-    gap: 8px; text-decoration: none;
-    box-shadow: 0 4px 12px rgba(59,91,255,0.3);
-  }
-  .btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(59,91,255,0.4); }
-  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
-  .btn-red { background: var(--red-grad); box-shadow: 0 4px 12px rgba(239,68,68,0.3); }
-  .btn-red:hover:not(:disabled) { box-shadow: 0 8px 20px rgba(239,68,68,0.4); }
-  .btn-secondary {
-    background: rgba(20,26,45,0.7); color: var(--text);
-    border: 1px solid var(--border); box-shadow: none;
-  }
-  body.light .btn-secondary { background: rgba(255,255,255,0.8); }
-  .btn-secondary:hover:not(:disabled) { border-color: var(--blue); box-shadow: 0 4px 16px rgba(59,91,255,0.2); }
-  .btn-block { width: 100%; }
-  .btn-sm { padding: 7px 12px; font-size: 12px; }
-
-  /* RESULT */
-  .result {
-    background: var(--card); border: 1px solid var(--border);
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 12px;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.5);
-    animation: revealCard 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  body.light .result { box-shadow: 0 16px 48px rgba(59,91,255,0.1); }
-  @keyframes revealCard { from { opacity: 0; transform: translateY(40px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
-  .result-header { display: flex; gap: 14px; padding: 16px; border-bottom: 1px solid var(--border); align-items: center; }
-  .author-avatar {
-    width: 50px; height: 50px; border-radius: 50%;
-    background: var(--blue-grad); overflow: hidden; flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px; padding: 3px; box-shadow: 0 4px 16px rgba(59,91,255,0.4);
-  }
-  .author-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-  .author-info { flex: 1; min-width: 0; }
-  .author-name { font-weight: 700; font-size: 15px; color: var(--blue-light); }
-  .author-desc {
-    color: var(--text-muted); font-size: 13px; margin-top: 3px;
-    display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2;
-    -webkit-box-orient: vertical; overflow: hidden;
-  }
-  .video-preview { background: #000; display: flex; justify-content: center; padding: 12px; position: relative; }
-  .video-preview video, .video-preview img { max-width: 100%; max-height: 460px; border-radius: 12px; }
-  .slideshow-nav {
-    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-    display: flex; gap: 8px; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px);
-    padding: 6px; border-radius: 20px;
-  }
-  .slideshow-nav button {
-    width: 32px; height: 32px; border-radius: 50%;
-    background: rgba(255,255,255,0.2); border: none;
-    color: white; font-size: 14px; cursor: pointer; font-family: inherit;
-  }
-  .slideshow-nav button:hover { background: rgba(255,255,255,0.35); }
-  .slideshow-indicator {
-    color: white; font-size: 12px; font-weight: 700;
-    display: flex; align-items: center; padding: 0 10px;
-  }
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 12px; border-bottom: 1px solid var(--border); }
-  .stat { text-align: center; }
-  .stat-value { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; }
-  .stat-label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; font-weight: 700; }
-  .download-section { padding: 14px 16px; display: grid; gap: 10px; }
-  .download-group-title { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; font-weight: 800; }
-  .download-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .actions-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 0 16px 16px; }
-  .actions-row .btn { padding: 10px 6px; font-size: 11px; }
-  @media (max-width: 480px) { .actions-row { grid-template-columns: 1fr 1fr; } }
-
-  /* BATCH */
-  .batch-list { display: grid; gap: 10px; margin-top: 12px; }
-  .batch-item {
-    background: var(--card); border: 1px solid var(--border);
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border-radius: var(--radius); padding: 12px;
-    display: flex; gap: 12px; align-items: center;
-    animation: revealCard 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  .batch-item-thumb {
-    width: 52px; height: 52px; border-radius: 10px;
-    background: rgba(10,15,30,0.6); overflow: hidden; flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center; font-size: 20px;
-  }
-  .batch-item-thumb img { width: 100%; height: 100%; object-fit: cover; }
-  .batch-item-info { flex: 1; min-width: 0; }
-  .batch-item-title { font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .batch-item-status { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
-  .batch-item-status.ok { color: #86efac; }
-  .batch-item-status.err { color: #fca5a5; }
-  .batch-progress {
-    display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
-    padding: 10px 14px; background: rgba(59,91,255,0.1);
-    border-radius: 12px; font-size: 13px; font-weight: 600;
-  }
-  .batch-progress-bar { flex: 1; height: 6px; background: rgba(59,91,255,0.2); border-radius: 3px; overflow: hidden; }
-  .batch-progress-fill { height: 100%; background: var(--blue-grad); width: 0%; transition: width 0.3s; }
-
-  /* HISTORY */
-  .history-list { display: grid; gap: 10px; }
-  .history-item {
-    background: rgba(20,26,45,0.7); border: 1px solid var(--border);
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border-radius: var(--radius); padding: 12px;
-    display: flex; gap: 12px; align-items: center; font-size: 13px;
-    transition: all 0.3s;
-  }
-  body.light .history-item { background: rgba(255,255,255,0.8); }
-  .history-item:hover { border-color: var(--border-strong); transform: translateX(4px); }
-  .history-item-info { flex: 1; min-width: 0; }
-  .history-item-title { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .history-item-date { font-size: 11px; color: var(--text-dim); margin-top: 3px; }
-  .empty-state { text-align: center; padding: 40px 20px; color: var(--text-muted); }
-  .empty-state-icon { font-size: 56px; margin-bottom: 14px; opacity: 0.4; }
-  .empty-state-text { font-size: 14px; }
-  .history-toolbar {
-    display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;
-  }
-  .history-toolbar .input-clean { flex: 1; min-width: 150px; font-size: 13px; padding: 9px 12px; }
-  .filter-chips { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
-  .filter-chip {
-    padding: 6px 12px; border-radius: 20px;
-    background: var(--card); border: 1px solid var(--border);
-    color: var(--text-muted); font-size: 12px; font-weight: 600;
-    cursor: pointer; font-family: inherit; transition: all 0.2s;
-  }
-  .filter-chip.active { background: var(--blue-grad); color: white; border-color: transparent; }
-
-  /* TRENDING */
-  .trending-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
-  @media (max-width: 600px) { .trending-grid { grid-template-columns: repeat(2, 1fr); } }
-  .trending-item {
-    background: rgba(20,26,45,0.7); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 14px 10px; cursor: pointer;
-    transition: all 0.3s; text-align: center;
-  }
-  body.light .trending-item { background: rgba(255,255,255,0.8); }
-  .trending-item:hover { transform: translateY(-3px); border-color: var(--blue); box-shadow: 0 8px 24px rgba(59,91,255,0.2); }
-  .trending-emoji { font-size: 26px; margin-bottom: 6px; }
-  .trending-title { font-size: 12px; font-weight: 700; }
-  .trending-sub { font-size: 10px; color: var(--text-dim); margin-top: 2px; }
-
-  /* SECTIONS */
-  section { padding: 50px 0; position: relative; z-index: 2; }
-  section.alt { background: rgba(10,15,30,0.4); }
-  body.light section.alt { background: rgba(59,91,255,0.05); }
-  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s; }
-  .reveal.in { opacity: 1; transform: translateY(0); }
-  .section-label {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 11px; font-weight: 800; color: var(--red);
-    text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;
-  }
-  .section-label::before {
-    content: ''; width: 6px; height: 6px; border-radius: 50%;
-    background: var(--red); box-shadow: 0 0 8px var(--red);
-  }
-  .section-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 28px; font-weight: 700; line-height: 1.2;
-    margin-bottom: 14px; letter-spacing: -1px;
-  }
-  .section-title .blue { background: var(--blue-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  .section-title .red { color: var(--red); }
-  .section-desc { color: var(--text-muted); font-size: 14px; line-height: 1.8; margin-bottom: 14px; max-width: 720px; }
-  @media (max-width: 640px) { .section-title { font-size: 22px; } section { padding: 36px 0; } }
-
-  /* FEATURE CARDS */
-  .feature-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
-  @media (max-width: 800px) { .feature-cards { grid-template-columns: 1fr; } }
-  .feature-card {
-    background: var(--card); border: 1px solid var(--border);
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border-radius: var(--radius-lg); padding: 24px 20px;
-    transition: all 0.3s; position: relative; overflow: hidden;
-  }
-  .feature-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--blue-grad); }
-  .feature-card:nth-child(2)::before { background: var(--mix-grad); }
-  .feature-card:nth-child(3)::before { background: var(--red-grad); }
-  .feature-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(59,91,255,0.25); border-color: var(--border-strong); }
-  .feature-icon {
-    width: 44px; height: 44px; border-radius: 14px;
-    background: rgba(59,91,255,0.15); display: flex; align-items: center;
-    justify-content: center; font-size: 22px; margin-bottom: 14px;
-  }
-  .feature-card:nth-child(2) .feature-icon { background: rgba(239,68,68,0.15); }
-  .feature-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-  .feature-card p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
-
-  /* STEPS */
-  .steps { display: grid; gap: 24px; margin-top: 32px; }
-  .step { display: flex; gap: 18px; align-items: flex-start; }
-  .step-number {
-    width: 48px; height: 48px; border-radius: 50%;
-    background: var(--blue-grad); color: white;
-    font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; box-shadow: 0 8px 24px rgba(59,91,255,0.4);
-  }
-  .step:nth-child(2) .step-number { background: var(--mix-grad); }
-  .step:nth-child(3) .step-number { background: var(--red-grad); }
-  .step-content h3 { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 6px; }
-  .step-content p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
-
-  /* TIPS */
-  .tips-list { list-style: none; margin-top: 20px; }
-  .tips-list li {
-    padding: 12px 0 12px 30px; position: relative;
-    font-size: 13px; color: var(--text-muted); line-height: 1.7;
-    border-bottom: 1px solid var(--border);
-  }
-  .tips-list li:last-child { border-bottom: none; }
-  .tips-list li::before {
-    content: ''; position: absolute; left: 0; top: 20px;
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--blue-grad); box-shadow: 0 0 10px rgba(59,91,255,0.6);
-  }
-  .tips-list li strong { color: var(--text); }
-
-  /* FAQ */
-  .faq-item {
-    background: var(--card); border: 1px solid var(--border);
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border-radius: var(--radius); margin-bottom: 10px;
-    overflow: hidden; transition: border-color 0.3s;
-  }
-  .faq-item:hover { border-color: var(--border-strong); }
-  .faq-q {
-    padding: 14px 18px; font-size: 14px; font-weight: 700;
-    cursor: pointer; display: flex; justify-content: space-between;
-    align-items: center; transition: background 0.3s; font-family: inherit;
-  }
-  .faq-q::after { content: '+'; font-size: 22px; color: var(--blue-light); transition: transform 0.3s; font-weight: 400; }
-  .faq-item.open .faq-q::after { transform: rotate(45deg); color: var(--red); }
-  .faq-a {
-    max-height: 0; overflow: hidden;
-    transition: max-height 0.3s, padding 0.3s;
-    font-size: 13px; color: var(--text-muted); line-height: 1.8; padding: 0 18px;
-  }
-  .faq-item.open .faq-a { max-height: 300px; padding: 0 18px 16px; }
-
-  /* ABOUT DEV */
-  .dev-card {
-    background: var(--card); border: 1px solid var(--border);
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border-radius: var(--radius-lg); padding: 32px 24px;
-    text-align: center; max-width: 500px; margin: 0 auto;
-    position: relative; overflow: hidden;
-  }
-  .dev-card::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-    background: var(--blue-grad);
-  }
-  .dev-avatar {
-    width: 90px; height: 90px; border-radius: 50%;
-    background: var(--blue-grad); margin: 0 auto 16px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 42px; color: white;
-    box-shadow: 0 12px 40px rgba(59,91,255,0.5);
-    position: relative;
-  }
-  .dev-avatar::after {
-    content: ''; position: absolute; inset: -4px;
-    border-radius: 50%; border: 2px dashed rgba(59,91,255,0.5);
-    animation: rotate 20s linear infinite;
-  }
-  @keyframes rotate { to { transform: rotate(360deg); } }
-  .dev-name {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 26px; font-weight: 700; margin-bottom: 6px;
-    background: var(--blue-grad); -webkit-background-clip: text;
-    background-clip: text; -webkit-text-fill-color: transparent;
-  }
-  .dev-role { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
-  .dev-desc { font-size: 14px; color: var(--text-muted); line-height: 1.8; max-width: 380px; margin: 0 auto; }
-
-  /* FOOTER */
-  footer {
-    text-align: center; padding: 30px 20px 20px;
-    border-top: 1px solid var(--border);
-    position: relative; z-index: 2;
-    color: var(--text-muted); font-size: 12px; line-height: 2;
-  }
-  .dev-credit {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 8px 20px; background: var(--card);
-    border: 1px solid var(--border); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border-radius: 30px; font-weight: 600; color: var(--text);
-    margin: 8px 0 12px; font-size: 12px;
-  }
-  .dev-credit span {
-    background: var(--blue-grad); -webkit-background-clip: text;
-    background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;
-  }
-  footer a { color: var(--blue-light); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-
-  /* TOAST */
-  .toast {
-    position: fixed; bottom: 20px; left: 50%;
-    transform: translateX(-50%) translateY(140px);
-    background: var(--card-solid); color: var(--text);
-    padding: 12px 22px; border-radius: 30px;
-    font-size: 13px; font-weight: 600;
-    border: 1px solid var(--border-strong);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    z-index: 1000; max-width: 90%; text-align: center;
-  }
-  .toast.show { transform: translateX(-50%) translateY(0); }
-
-  /* ACHIEVEMENT */
-  .achievement {
-    position: fixed; top: 70px; left: 50%;
-    transform: translateX(-50%) translateY(-200px);
-    background: linear-gradient(135deg, #3b5bff, #ef4444);
-    color: white; padding: 14px 22px; border-radius: 20px;
-    font-size: 13px; font-weight: 700;
-    box-shadow: 0 12px 40px rgba(59,91,255,0.5);
-    z-index: 1001; display: flex; align-items: center; gap: 10px;
-    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    max-width: 90%;
-  }
-  .achievement.show { transform: translateX(-50%) translateY(0); }
-  .achievement-icon { font-size: 22px; }
-
-  /* CONFETTI */
-  .confetti { position: fixed; width: 10px; height: 10px; z-index: 999; pointer-events: none; animation: confettiFall linear forwards; }
-  @keyframes confettiFall { to { transform: translateY(100vh) rotate(720deg); opacity: 0; } }
-
-  /* BOTTOM NAV */
-  .bottom-nav {
-    position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
-    background: rgba(20,26,45,0.92);
-    border: 1px solid var(--border-strong);
-    backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
-    border-radius: 24px; padding: 6px; display: flex; gap: 4px;
-    z-index: 100; box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  body.light .bottom-nav { background: rgba(255,255,255,0.95); }
-  .bottom-nav.hide { transform: translateX(-50%) translateY(120px); }
-  .nav-item {
-    padding: 8px 14px; border-radius: 16px;
-    background: transparent; border: none;
-    color: var(--text-muted); font-size: 10px;
-    font-weight: 700; cursor: pointer; font-family: inherit;
-    transition: all 0.3s; display: flex; flex-direction: column;
-    align-items: center; gap: 2px; min-width: 54px;
-  }
-  .nav-item.active { background: var(--blue-grad); color: white; box-shadow: 0 4px 16px rgba(59,91,255,0.4); }
-  .nav-item-icon { font-size: 16px; }
-
-  /* KEYBOARD HINT */
-  .kbd-hint {
-    text-align: center; font-size: 11px; color: var(--text-dim);
-    margin-top: 8px;
-  }
-  .kbd-hint kbd {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 4px; padding: 1px 6px; font-family: monospace;
-    font-size: 10px; color: var(--text-muted);
-  }
-
-  @media (max-width: 480px) {
-    .container { padding: 16px 12px 40px; }
-    .nav-logo-text { font-size: 18px; }
-    .download-row { grid-template-columns: 1fr; }
-    .stats { grid-template-columns: repeat(2, 1fr); }
-    .step { flex-direction: column; align-items: center; text-align: center; }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <canvas id="auroraCanvas"></canvas>
+<canvas id="meshCanvas"></canvas>
 <canvas id="particleCanvas"></canvas>
 <canvas id="starCanvas"></canvas>
 
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-inner">
-    <a href="#" class="nav-logo" onclick="switchTab('video'); return false;">
+    <a href="index.html" class="nav-logo">
       <div class="nav-logo-icon">⬇</div>
       <div class="nav-logo-text">Tiv<span class="red">.</span></div>
     </a>
     <div class="nav-actions">
       <button class="nav-icon-btn" id="themeBtn" onclick="toggleTheme()" title="Ganti tema">🌙</button>
-      <button class="nav-icon-btn" onclick="openModal('aboutModal')" title="Tentang">ℹ️</button>
+      <button class="nav-icon-btn" id="menuBtn" onclick="openDrawer()" title="Menu">☰</button>
     </div>
   </div>
 </nav>
 
+<!-- DRAWER MENU -->
+<div class="drawer-backdrop" id="drawerBackdrop" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-title">Menu</div>
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  </div>
+
+  <div class="drawer-section">
+    <div class="drawer-section-title">Navigasi</div>
+    <a href="index.html" class="drawer-link">
+      <span class="drawer-link-icon">🏠</span><span>Beranda</span>
+    </a>
+    <a href="games.html" class="drawer-link">
+      <span class="drawer-link-icon">🎮</span><span>Games</span>
+      <span class="drawer-link-badge">4</span>
+    </a>
+    <a href="tools.html" class="drawer-link">
+      <span class="drawer-link-icon">🛠️</span><span>Tools</span>
+      <span class="drawer-link-badge">6</span>
+    </a>
+  </div>
+
+  <div class="drawer-section">
+    <div class="drawer-section-title">Fitur Download</div>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); switchTab('video'); return false;">
+      <span class="drawer-link-icon">🎬</span><span>Video TikTok</span>
+    </a>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); switchTab('audio'); return false;">
+      <span class="drawer-link-icon">🎵</span><span>MP3 Audio</span>
+    </a>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); switchTab('batch'); return false;">
+      <span class="drawer-link-icon">📦</span><span>Batch Download</span>
+    </a>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); switchTab('history'); return false;">
+      <span class="drawer-link-icon">🕐</span><span>Riwayat</span>
+    </a>
+  </div>
+
+  <div class="drawer-section">
+    <div class="drawer-section-title">Info</div>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); openModal('aboutModal'); return false;">
+      <span class="drawer-link-icon">ℹ️</span><span>Tentang</span>
+    </a>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); openModal('disclaimerModal'); return false;">
+      <span class="drawer-link-icon">⚠️</span><span>Disclaimer</span>
+    </a>
+  </div>
+
+  <div class="drawer-section">
+    <div class="drawer-section-title">Pengaturan</div>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); toggleTheme(); return false;">
+      <span class="drawer-link-icon">🌓</span><span>Ganti Tema</span>
+    </a>
+  </div>
+</aside>
+
 <!-- HERO -->
 <div class="hero">
   <div class="hero-label">Free · No Login · By PANN</div>
-  <h1>Download TikTok<br><span class="red">Tanpa Watermark</span> <span class="blue">Full HD</span></h1>
+  <h1>Download TikTok<br><span class="red">Tanpa Watermark</span> <span class="shine">Full HD</span></h1>
   <p>Tempel link TikTok, ambil video HD-nya, atau ekstrak audio MP3-nya. Gratis, cepat, tanpa daftar akun.</p>
+  <div class="hero-stats">
+    <span>⚡ <strong>Cepat</strong></span>
+    <span>💧 <strong>Tanpa Watermark</strong></span>
+    <span>🎬 <strong>HD Quality</strong></span>
+    <span>🆓 <strong>Gratis</strong></span>
+  </div>
 </div>
 
 <!-- INSTALL BANNER -->
@@ -741,6 +129,7 @@
   <div class="dash-item"><div class="dash-value" id="statTotal">0</div><div class="dash-label">Total</div></div>
   <div class="dash-item"><div class="dash-value" id="statToday">0</div><div class="dash-label">Hari Ini</div></div>
   <div class="dash-item"><div class="dash-value" id="statStreak">0</div><div class="dash-label">Streak</div></div>
+  <div class="dash-item"><div class="dash-value">∞</div><div class="dash-label">Gratis</div></div>
 </div>
 
 <!-- DOWNLOAD BOX -->
@@ -751,10 +140,9 @@
     <button class="btn-download-main" id="fetchBtn" onclick="handleFetch()">Download</button>
   </div>
   <div class="status" id="status"></div>
-  <div class="kbd-hint">💡 Tip: pakai <kbd>Ctrl</kbd>+<kbd>V</kbd> di mana aja buat auto-fetch</div>
 </div>
 
-<!-- TABS + PANELS -->
+<!-- TABS -->
 <div class="container">
   <div class="tabs">
     <button class="tab active" data-tab="video" onclick="switchTab('video')">🎬 Video</button>
@@ -763,24 +151,72 @@
     <button class="tab" data-tab="history" onclick="switchTab('history')">🕐 Riwayat</button>
   </div>
 
+  <!-- PANEL: VIDEO -->
   <div class="panel active" id="panel-video">
     <div id="resultContainer"></div>
+
+    <!-- TRENDING -->
     <div class="card">
-      <div style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">🔥 Trending</div>
-      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Klik salah satu buat coba cepat.</p>
+      <div class="card-title">🔥 Trending</div>
+      <div class="card-desc">Klik salah satu buat coba cepat.</div>
       <div class="trending-grid">
-        <div class="trending-item" onclick="fillTrending('anime')"><div class="trending-emoji">🎌</div><div class="trending-title">Anime</div><div class="trending-sub">Coba</div></div>
-        <div class="trending-item" onclick="fillTrending('music')"><div class="trending-emoji">🎵</div><div class="trending-title">Music</div><div class="trending-sub">Coba</div></div>
-        <div class="trending-item" onclick="fillTrending('comedy')"><div class="trending-emoji">😂</div><div class="trending-title">Comedy</div><div class="trending-sub">Coba</div></div>
-        <div class="trending-item" onclick="fillTrending('dance')"><div class="trending-emoji">💃</div><div class="trending-title">Dance</div><div class="trending-sub">Coba</div></div>
+        <div class="trending-item" onclick="fillTrending('anime')">
+          <div class="trending-emoji">🎌</div>
+          <div class="trending-title">Anime</div>
+          <div class="trending-sub">Coba</div>
+        </div>
+        <div class="trending-item" onclick="fillTrending('music')">
+          <div class="trending-emoji">🎵</div>
+          <div class="trending-title">Music</div>
+          <div class="trending-sub">Coba</div>
+        </div>
+        <div class="trending-item" onclick="fillTrending('comedy')">
+          <div class="trending-emoji">😂</div>
+          <div class="trending-title">Comedy</div>
+          <div class="trending-sub">Coba</div>
+        </div>
+        <div class="trending-item" onclick="fillTrending('dance')">
+          <div class="trending-emoji">💃</div>
+          <div class="trending-title">Dance</div>
+          <div class="trending-sub">Coba</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="card">
+      <div class="card-title">🚀 Quick Access</div>
+      <div class="card-desc">Buka fitur lain dengan cepat.</div>
+      <div class="trending-grid">
+        <a href="games.html" class="trending-item" style="text-decoration:none;color:inherit;">
+          <div class="trending-emoji">🎮</div>
+          <div class="trending-title">Games</div>
+          <div class="trending-sub">4 Game</div>
+        </a>
+        <a href="tools.html" class="trending-item" style="text-decoration:none;color:inherit;">
+          <div class="trending-emoji">🛠️</div>
+          <div class="trending-title">Tools</div>
+          <div class="trending-sub">6 Tools</div>
+        </a>
+        <div class="trending-item" onclick="switchTab('batch')">
+          <div class="trending-emoji">📦</div>
+          <div class="trending-title">Batch</div>
+          <div class="trending-sub">Massal</div>
+        </div>
+        <div class="trending-item" onclick="switchTab('audio')">
+          <div class="trending-emoji">🎵</div>
+          <div class="trending-title">MP3</div>
+          <div class="trending-sub">Audio</div>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- PANEL: AUDIO -->
   <div class="panel" id="panel-audio">
     <div class="card">
-      <div style="font-size: 15px; font-weight: 700; margin-bottom: 6px;">🎵 Ambil Audio (MP3)</div>
-      <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Tempel link TikTok, kita ambil audio-nya aja.</p>
+      <div class="card-title">🎵 Ambil Audio (MP3)</div>
+      <div class="card-desc">Tempel link TikTok, kita ambil audio-nya aja.</div>
       <div style="display: flex; gap: 8px; flex-wrap: wrap;">
         <input type="text" id="audioInput" class="input-clean" placeholder="Link TikTok..." autocomplete="off" spellcheck="false" style="flex: 1; min-width: 180px;">
         <button class="btn" onclick="handleAudio()">Ambil MP3</button>
@@ -790,11 +226,12 @@
     <div id="audioResult"></div>
   </div>
 
+  <!-- PANEL: BATCH -->
   <div class="panel" id="panel-batch">
     <div class="card">
-      <div style="font-size: 15px; font-weight: 700; margin-bottom: 6px;">📦 Batch Download</div>
-      <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Tempel banyak link sekaligus — satu link per baris.</p>
-      <textarea id="batchInput" placeholder="https://vt.tiktok.com/xxx&#10;https://vt.tiktok.com/yyy"></textarea>
+      <div class="card-title">📦 Batch Download</div>
+      <div class="card-desc">Tempel banyak link sekaligus — satu link per baris.</div>
+      <textarea id="batchInput" placeholder="https://vt.tiktok.com/xxx&#10;https://vt.tiktok.com/yyy&#10;https://vt.tiktok.com/zzz"></textarea>
       <div style="display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;">
         <button class="btn" onclick="handleBatch()" id="batchBtn" style="flex: 1;">🚀 Proses Semua</button>
         <button class="btn btn-secondary" onclick="clearBatch()">🗑️</button>
@@ -805,12 +242,13 @@
     <div class="batch-list" id="batchList"></div>
   </div>
 
+  <!-- PANEL: HISTORY -->
   <div class="panel" id="panel-history">
     <div class="card">
-      <div style="font-size: 15px; font-weight: 700; margin-bottom: 12px;">🕐 Riwayat Download</div>
+      <div class="card-title">🕐 Riwayat Download</div>
       <div class="history-toolbar">
         <input type="text" id="historySearch" class="input-clean" placeholder="🔍 Cari riwayat..." oninput="renderHistory()">
-        <button class="btn btn-secondary btn-sm" onclick="copyAllHistory()">📋 Copy Semua</button>
+        <button class="btn btn-secondary btn-sm" onclick="copyAllHistory()">📋 Copy</button>
         <button class="btn btn-secondary btn-sm" onclick="clearHistory()">🗑️ Hapus</button>
       </div>
       <div class="filter-chips" id="filterChips">
@@ -830,12 +268,12 @@
     <div class="section-label">Kenapa Tiv</div>
     <h2 class="section-title">Kenapa harus pakai <span class="blue">Tiv Downloader</span>?</h2>
     <p class="section-desc">Tiv Downloader adalah alat bantu untuk menyimpan video TikTok ke perangkat kamu — tanpa watermark yang mengganggu, dengan kualitas maksimal yang disediakan sumber video.</p>
-    <p class="section-desc">Semua berjalan langsung di browser kamu. Tanpa daftar akun, tanpa install aplikasi, tanpa iklan yang mengganggu.</p>
+    <p class="section-desc">Semua berjalan langsung di browser kamu. Tanpa daftar akun, tanpa install aplikasi, tanpa iklan yang mengganggu. Cukup tempel link, dan simpan.</p>
     <div class="feature-cards">
       <div class="feature-card">
         <div class="feature-icon">💧</div>
         <h3>Bebas Watermark</h3>
-        <p>Video yang diunduh bersih dari logo TikTok dan username overlay. Cocok untuk edit, arsip pribadi, atau referensi konten.</p>
+        <p>Video yang diunduh bersih dari logo dan username overlay. Cocok untuk edit, arsip pribadi, atau referensi konten kreatif.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🎬</div>
@@ -845,7 +283,7 @@
       <div class="feature-card">
         <div class="feature-icon">⚡</div>
         <h3>Cepat & Gratis</h3>
-        <p>Proses cepat lewat API publik. Tidak ada batasan jumlah download, tidak ada akun, tidak ada biaya tersembunyi.</p>
+        <p>Tidak ada batasan jumlah download, tidak ada akun, tidak ada biaya tersembunyi. Buka, tempel, download.</p>
       </div>
     </div>
   </div>
@@ -883,7 +321,7 @@
         <div class="step-number">4</div>
         <div class="step-content">
           <h3>Pilih Kualitas & Simpan</h3>
-          <p>Pilih <strong>HD</strong> (tanpa watermark) atau <strong>SD</strong>. Klik tombol download — file otomatis tersimpan.</p>
+          <p>Pilih <strong>HD</strong> (tanpa watermark) atau <strong>SD</strong>. Klik tombol download — file otomatis tersimpan ke perangkat kamu.</p>
         </div>
       </div>
     </div>
@@ -895,15 +333,16 @@
   <div class="container-wide">
     <div class="section-label">Panduan Lengkap</div>
     <h2 class="section-title">Panduan & <span class="blue">Tips Pro</span></h2>
-    <p class="section-desc">Beberapa tips supaya pengalaman download kamu makin lancar:</p>
+    <p class="section-desc">Beberapa tips supaya pengalaman download kamu makin lancar dan hasilnya maksimal.</p>
     <ul class="tips-list">
-      <li><strong>Selalu pakai "Salin Tautan"</strong> dari aplikasi TikTok langsung — bukan URL dari browser.</li>
+      <li><strong>Selalu pakai "Salin Tautan"</strong> dari aplikasi TikTok langsung — bukan URL dari browser. Ini memastikan link valid dan lengkap.</li>
       <li><strong>Pilih opsi HD</strong> kalau mau kualitas maksimal. Untuk hemat kuota, pilih SD.</li>
-      <li><strong>Untuk audio saja</strong>, langsung ke tab MP3 dan tempel link-nya.</li>
-      <li><strong>Batch download</strong> bisa dipakai kalau mau unduh banyak video sekaligus.</li>
-      <li><strong>Kalau gagal</strong>, pastikan akun TikTok-nya publik (bukan private).</li>
-      <li><strong>Riwayat download</strong> tersimpan di HP kamu, bisa cek ulang kapan aja.</li>
-      <li><strong>Gunakan untuk keperluan pribadi.</strong> Kalau mau reupload, minta izin kreator dulu.</li>
+      <li><strong>Untuk audio saja</strong> (buat backsound atau sound viral), langsung ke tab MP3 dan tempel link-nya.</li>
+      <li><strong>Batch download</strong> bisa dipakai kalau mau unduh banyak video sekaligus — tempel satu link per baris.</li>
+      <li><strong>Kalau gagal</strong>, pastikan akun TikTok-nya publik (bukan private). Video dari akun private tidak bisa diunduh.</li>
+      <li><strong>Riwayat download</strong> tersimpan di perangkat kamu, bisa cek ulang kapan aja tanpa koneksi.</li>
+      <li><strong>Gunakan untuk keperluan pribadi.</strong> Kalau mau reupload, minta izin kreator dulu — itu etika yang benar.</li>
+      <li><strong>Bookmark halaman ini</strong> biar nggak perlu nyari-nyari lagi kalau butuh download video.</li>
     </ul>
   </div>
 </section>
@@ -916,8 +355,17 @@
     <div class="dev-card">
       <div class="dev-avatar">👨‍💻</div>
       <div class="dev-name">PANN</div>
-      <div class="dev-role">Developer & Designer</div>
-      <p class="dev-desc">Tiv Downloader dibuat dengan teknologi web modern — pure HTML, CSS, JavaScript. Tanpa framework berat, tanpa backend. Semua berjalan di browser kamu.</p>
+      <div class="dev-role">Developer · Designer · Creator</div>
+      <div class="dev-badges">
+        <span class="dev-badge">🎨 UI/UX</span>
+        <span class="dev-badge">💻 Frontend</span>
+        <span class="dev-badge">🚀 Builder</span>
+      </div>
+      <p class="dev-desc">Tiv Downloader dibuat dengan teknologi web modern — HTML, CSS, dan JavaScript murni. Tanpa framework berat, tanpa backend. Semua berjalan langsung di browser kamu, cepat dan aman.</p>
+      <div class="dev-links">
+        <a href="games.html" class="dev-link">🎮 Coba Games</a>
+        <a href="tools.html" class="dev-link secondary">🛠️ Coba Tools</a>
+      </div>
     </div>
   </div>
 </section>
@@ -929,35 +377,71 @@
     <h2 class="section-title">Pertanyaan <span class="red">Umum</span></h2>
     <p class="section-desc">Hal-hal yang sering ditanyakan pengguna Tiv Downloader.</p>
     <div style="margin-top: 28px;">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Apakah Tiv Downloader gratis?</div><div class="faq-a">Ya, 100% gratis. Tidak ada iklan, tidak ada login, tidak ada batasan.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Apakah video saya disimpan di server?</div><div class="faq-a">Tidak. Semua proses menggunakan API publik. File langsung ke perangkat kamu.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Kenapa video gagal diunduh?</div><div class="faq-a">Kemungkinan akun private atau video dihapus. Coba video lain yang publik.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Apakah legal?</div><div class="faq-a">Untuk keperluan pribadi, umumnya boleh. Jangan reupload tanpa izin kreator.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Bisa download audio saja?</div><div class="faq-a">Bisa. Klik tab MP3, tempel link, klik Ambil MP3.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Butuh install aplikasi?</div><div class="faq-a">Tidak. Cukup browser. Bisa diinstall sebagai PWA kalau didukung — bakal muncul banner "Install" di atas.</div></div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Apakah Tiv Downloader gratis?</div>
+        <div class="faq-a">Ya, 100% gratis. Tidak ada iklan, tidak ada login, tidak ada batasan jumlah download.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Apakah video saya disimpan di server?</div>
+        <div class="faq-a">Tidak. File langsung dikirim ke perangkat kamu. Kami tidak menyimpan apa-apa.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Kenapa video gagal diunduh?</div>
+        <div class="faq-a">Kemungkinan akun private, atau video sudah dihapus. Coba video lain yang publik.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Apakah legal mengunduh video TikTok?</div>
+        <div class="faq-a">Untuk keperluan pribadi, umumnya boleh. Jangan reupload tanpa izin kreator — itu melanggar hak cipta dan etika.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Bisa download audio saja?</div>
+        <div class="faq-a">Bisa. Klik tab MP3, tempel link, lalu klik Ambil MP3.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Butuh install aplikasi?</div>
+        <div class="faq-a">Tidak. Cukup browser di HP atau PC. Bahkan bisa diinstall sebagai PWA — bakal muncul banner "Install" di atas.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Ada fitur lain selain download?</div>
+        <div class="faq-a">Ada. Cek halaman <strong>Games</strong> (4 game) dan <strong>Tools</strong> (6 tools) lewat menu di kanan atas.</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
+  <div class="footer-links">
+    <a href="index.html">Beranda</a>
+    <a href="games.html">Games</a>
+    <a href="tools.html">Tools</a>
+    <a href="#" onclick="openModal('aboutModal'); return false;">Tentang</a>
+    <a href="#" onclick="openModal('disclaimerModal'); return false;">Disclaimer</a>
+  </div>
   <div class="dev-credit">👨‍💻 Developer: <span>PANN</span></div>
   <div>© <span id="year">2026</span> Tiv Downloader · Dibuat dengan ❤️</div>
-  <div style="margin-top: 6px;"><a href="#" onclick="openModal('disclaimerModal'); return false;">Disclaimer</a></div>
 </footer>
 
 <!-- BOTTOM NAV -->
 <nav class="bottom-nav" id="bottomNav">
-  <button class="nav-item active" data-nav="video" onclick="switchTab('video')"><span class="nav-item-icon">🎬</span><span>Video</span></button>
-  <button class="nav-item" data-nav="audio" onclick="switchTab('audio')"><span class="nav-item-icon">🎵</span><span>MP3</span></button>
-  <button class="nav-item" data-nav="batch" onclick="switchTab('batch')"><span class="nav-item-icon">📦</span><span>Batch</span></button>
-  <button class="nav-item" data-nav="history" onclick="switchTab('history')"><span class="nav-item-icon">🕐</span><span>Riwayat</span></button>
+  <button class="nav-item active" data-nav="video" onclick="switchTab('video')">
+    <span class="nav-item-icon">🎬</span><span>Video</span>
+  </button>
+  <button class="nav-item" data-nav="audio" onclick="switchTab('audio')">
+    <span class="nav-item-icon">🎵</span><span>MP3</span>
+  </button>
+  <button class="nav-item" data-nav="batch" onclick="switchTab('batch')">
+    <span class="nav-item-icon">📦</span><span>Batch</span>
+  </button>
+  <button class="nav-item" data-nav="history" onclick="switchTab('history')">
+    <span class="nav-item-icon">🕐</span><span>Riwayat</span>
+  </button>
 </nav>
 
 <!-- LOADING OVERLAY -->
 <div class="loading-overlay" id="loadingOverlay">
   <div class="loading-spinner-big"></div>
-  <div class="loading-text" id="loadingText">INITIALIZING...</div>
+  <div class="loading-text" id="loadingText">MEMPROSES...</div>
   <div class="loading-progress"><div class="loading-progress-fill" id="loadingProgress"></div></div>
 </div>
 
@@ -968,740 +452,30 @@
 </div>
 
 <!-- MODAL: ABOUT -->
-<div id="aboutModal" style="position:fixed; inset:0; background:rgba(0,0,0,0.7); backdrop-filter:blur(8px); z-index:1001; display:none; align-items:center; justify-content:center; padding:20px;" onclick="if(event.target===this) closeModal('aboutModal')">
-  <div style="background: var(--card-solid); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); padding: 26px; max-width: 420px; width: 100%; box-shadow: 0 24px 80px rgba(0,0,0,0.6);">
-    <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; margin-bottom: 14px;">✦ Tentang Tiv Downloader</h3>
-    <p style="font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 12px;"><strong style="color: var(--text);">Tiv Downloader</strong> adalah alat bantu download video TikTok tanpa watermark, MP3, dan slide foto.</p>
-    <p style="font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 12px;">Dibuat oleh <strong style="color: var(--text);">PANN</strong> — semua berjalan di browser Anda.</p>
-    <p style="font-size: 12px; color: var(--text-dim);">API: TikWM · v9.0 Level 7 Final</p>
-    <button class="btn btn-block" style="margin-top: 16px;" onclick="closeModal('aboutModal')">Tutup</button>
+<div class="modal-backdrop" id="aboutModal">
+  <div class="modal">
+    <h3>✦ Tentang Tiv Downloader</h3>
+    <p><strong>Tiv Downloader</strong> adalah alat bantu download video TikTok tanpa watermark, MP3, dan slide foto.</p>
+    <p>Dibuat oleh <strong>PANN</strong> — semua berjalan di browser Anda, tanpa login, tanpa iklan, tanpa tracking.</p>
+    <p style="font-size: 12px; color: var(--text-dim);">Versi 10.0 · Tiv Series</p>
+    <button class="btn btn-block" style="margin-top: 14px;" onclick="closeModal('aboutModal')">Tutup</button>
   </div>
 </div>
 
 <!-- MODAL: DISCLAIMER -->
-<div id="disclaimerModal" style="position:fixed; inset:0; background:rgba(0,0,0,0.7); backdrop-filter:blur(8px); z-index:1001; display:none; align-items:center; justify-content:center; padding:20px;" onclick="if(event.target===this) closeModal('disclaimerModal')">
-  <div style="background: var(--card-solid); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); padding: 26px; max-width: 420px; width: 100%; box-shadow: 0 24px 80px rgba(0,0,0,0.6);">
-    <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; margin-bottom: 14px;">⚠️ Disclaimer</h3>
-    <p style="font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 10px;">• Web ini hanya alat bantu unduh untuk penggunaan pribadi.</p>
-    <p style="font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 10px;">• Hormati hak cipta kreator. Jangan reupload tanpa izin.</p>
-    <p style="font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 10px;">• Kami tidak menyimpan link atau file Anda.</p>
-    <p style="font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 10px;">• Semua proses melalui API publik pihak ketiga.</p>
-    <button class="btn btn-block" style="margin-top: 16px;" onclick="closeModal('disclaimerModal')">Saya Mengerti</button>
+<div class="modal-backdrop" id="disclaimerModal">
+  <div class="modal">
+    <h3>⚠️ Disclaimer</h3>
+    <p>• Web ini hanya alat bantu unduh untuk penggunaan pribadi.</p>
+    <p>• Hormati hak cipta kreator. Jangan reupload tanpa izin.</p>
+    <p>• Kami tidak menyimpan link atau file Anda.</p>
+    <p>• Semua proses berjalan langsung di browser Anda.</p>
+    <button class="btn btn-block" style="margin-top: 14px;" onclick="closeModal('disclaimerModal')">Saya Mengerti</button>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
-<script>
-/* ============================================================
-   Tiv Downloader v9.0 — Level 7 Final
-   Developer: PANN
-   ============================================================ */
-const API_ENDPOINT = 'https://www.tikwm.com/api/';
-const CORS_PROXIES = ['https://corsproxy.io/?url=', 'https://api.allorigins.win/raw?url='];
-const HISTORY_KEY = 'tiv_history_v9';
-const THEME_KEY = 'tiv_theme_v9';
-const STATS_KEY = 'tiv_stats_v9';
-const MAX_HISTORY = 50;
-const MAX_RETRY = 2;
-let currentFilter = 'all';
-
-/* ---------- PWA SERVICE WORKER ---------- */
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
-  });
-}
-
-/* ---------- AURORA ---------- */
-(function initAurora() {
-  const canvas = document.getElementById('auroraCanvas');
-  const ctx = canvas.getContext('2d');
-  let W, H;
-  function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-  resize(); window.addEventListener('resize', resize);
-  const blobs = [
-    { x: 0.2, y: 0.2, r: 0.45, c: [59,91,255], vx: 0.0003, vy: 0.0002 },
-    { x: 0.8, y: 0.3, r: 0.4, c: [239,68,68], vx: -0.0002, vy: 0.0003 },
-    { x: 0.5, y: 0.8, r: 0.45, c: [30,58,138], vx: 0.0002, vy: -0.0002 },
-    { x: 0.7, y: 0.7, r: 0.35, c: [220,38,38], vx: -0.0003, vy: 0.0001 },
-    { x: 0.3, y: 0.6, r: 0.35, c: [99,102,241], vx: 0.00025, vy: -0.00025 },
-    { x: 0.85, y: 0.8, r: 0.3, c: [248,113,113], vx: -0.00015, vy: 0.0002 }
-  ];
-  let t = 0;
-  function draw() {
-    ctx.fillStyle = document.body.classList.contains('light') ? '#f1f5f9' : '#0a0f1e';
-    ctx.fillRect(0, 0, W, H);
-    blobs.forEach((b, i) => {
-      b.x += b.vx + Math.sin(t * 0.001 + i) * 0.0006;
-      b.y += b.vy + Math.cos(t * 0.001 + i) * 0.0006;
-      if (b.x < 0 || b.x > 1) b.vx *= -1;
-      if (b.y < 0 || b.y > 1) b.vy *= -1;
-      const cx = b.x * W, cy = b.y * H, rad = b.r * Math.max(W, H);
-      const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, rad);
-      const [r,g,bl] = b.c;
-      grad.addColorStop(0, `rgba(${r},${g},${bl},0.32)`);
-      grad.addColorStop(1, `rgba(${r},${g},${bl},0)`);
-      ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
-    });
-    t++; requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-/* ---------- PARTICLES ---------- */
-(function initParticles() {
-  const canvas = document.getElementById('particleCanvas');
-  const ctx = canvas.getContext('2d');
-  let W, H, particles = [];
-  function resize() {
-    W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight;
-    particles = [];
-    const count = Math.min(50, Math.floor(W * H / 30000));
-    for (let i = 0; i < count; i++) {
-      particles.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35, r: Math.random() * 1.5 + 0.5 });
-    }
-  }
-  resize(); window.addEventListener('resize', resize);
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    const isLight = document.body.classList.contains('light');
-    particles.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < 0 || p.x > W) p.vx *= -1;
-      if (p.y < 0 || p.y > H) p.vy *= -1;
-      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = isLight ? 'rgba(59,91,255,0.4)' : 'rgba(147,180,255,0.5)';
-      ctx.fill();
-    });
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const d = Math.sqrt(dx*dx + dy*dy);
-        if (d < 130) {
-          ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = isLight ? `rgba(59,91,255,${0.15 * (1 - d/130)})` : `rgba(59,91,255,${0.12 * (1 - d/130)})`;
-          ctx.lineWidth = 0.5; ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-/* ---------- STARS ---------- */
-(function initStars() {
-  const canvas = document.getElementById('starCanvas');
-  const ctx = canvas.getContext('2d');
-  let W, H, stars = [];
-  function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-  resize(); window.addEventListener('resize', resize);
-  function spawn() { stars.push({ x: Math.random() * W * 0.8, y: Math.random() * H * 0.3, len: 80 + Math.random() * 100, speed: 9 + Math.random() * 5, angle: Math.PI / 4, life: 1 }); }
-  setInterval(spawn, 3000);
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    stars.forEach((s, i) => {
-      ctx.beginPath(); ctx.moveTo(s.x, s.y);
-      ctx.lineTo(s.x - Math.cos(s.angle) * s.len, s.y - Math.sin(s.angle) * s.len);
-      const grad = ctx.createLinearGradient(s.x, s.y, s.x - Math.cos(s.angle)*s.len, s.y - Math.sin(s.angle)*s.len);
-      grad.addColorStop(0, `rgba(255,255,255,${s.life})`);
-      grad.addColorStop(1, 'rgba(255,255,255,0)');
-      ctx.strokeStyle = grad; ctx.lineWidth = 2; ctx.stroke();
-      s.x += Math.cos(s.angle) * s.speed; s.y += Math.sin(s.angle) * s.speed;
-      s.life -= 0.008;
-      if (s.life <= 0) stars.splice(i, 1);
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-/* ---------- HELPERS ---------- */
-function $(id) { return document.getElementById(id); }
-function setStatus(elId, msg, type = 'info') {
-  const el = $(elId);
-  if (!msg) { el.className = 'status'; el.innerHTML = ''; return; }
-  el.className = 'status show ' + type;
-  el.innerHTML = msg;
-}
-function toast(msg, duration = 2400) {
-  const t = $('toast');
-  t.textContent = msg; t.classList.add('show');
-  clearTimeout(t._timer);
-  t._timer = setTimeout(() => t.classList.remove('show'), duration);
-}
-function formatNumber(n) {
-  n = Number(n) || 0;
-  if (n >= 1e9) return (n / 1e9).toFixed(1) + 'B';
-  if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
-  if (n >= 1e3) return (n / 1e3).toFixed(1) + 'K';
-  return String(n);
-}
-function escapeHtml(s) {
-  if (s == null) return '';
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
-}
-function isValidTikTokUrl(url) { return url && /(?:tiktok\.com|vt\.tiktok\.com|vm\.tiktok\.com)/i.test(url); }
-
-async function fetchFromAPI(tiktokUrl) {
-  const apiUrl = API_ENDPOINT + '?url=' + encodeURIComponent(tiktokUrl) + '&hd=1';
-  try {
-    const res = await fetch(apiUrl, { headers: { 'Accept': 'application/json' } });
-    if (res.ok) { const data = await res.json(); if (data && data.code === 0 && data.data) return data; }
-  } catch (e) {}
-  for (const proxy of CORS_PROXIES) {
-    try {
-      const res = await fetch(proxy + encodeURIComponent(apiUrl));
-      if (!res.ok) continue;
-      const data = await res.json();
-      if (data && data.code === 0 && data.data) return data;
-    } catch (e) {}
-  }
-  const err = new Error('Gagal mengambil data.');
-  err.code = 'FETCH_FAIL';
-  throw err;
-}
-
-async function fetchWithRetry(url) {
-  let lastErr;
-  for (let i = 0; i <= MAX_RETRY; i++) {
-    try { return await fetchFromAPI(url); }
-    catch (e) {
-      lastErr = e;
-      if (i < MAX_RETRY) {
-        await new Promise(r => setTimeout(r, 800 * (i + 1)));
-        toast(`⏳ Retry ${i + 1}/${MAX_RETRY}...`, 1500);
-      }
-    }
-  }
-  throw lastErr;
-}
-
-function getErrorMessage(err, url) {
-  if (!url || !isValidTikTokUrl(url)) return 'Link tidak valid. Pastikan dari tiktok.com';
-  if (err.message.includes('private')) return 'Akun private. Coba video dari akun publik.';
-  if (err.message.includes('not found') || err.message.includes('404')) return 'Video tidak ditemukan atau sudah dihapus.';
-  if (err.message.includes('timeout') || err.message.includes('network')) return 'Koneksi lambat. Coba lagi.';
-  if (err.code === 'FETCH_FAIL') return 'API sedang sibuk atau down. Coba 1-2 menit lagi.';
-  return err.message || 'Terjadi kesalahan.';
-}
-
-/* ---------- SOUND ---------- */
-let audioCtx = null;
-function playSound(type) {
-  try {
-    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const o = audioCtx.createOscillator();
-    const g = audioCtx.createGain();
-    o.connect(g); g.connect(audioCtx.destination);
-    if (type === 'click') { o.frequency.value = 600; g.gain.value = 0.05; o.start(); o.stop(audioCtx.currentTime + 0.05); }
-    else if (type === 'success') {
-      o.frequency.setValueAtTime(500, audioCtx.currentTime);
-      o.frequency.exponentialRampToValueAtTime(900, audioCtx.currentTime + 0.15);
-      g.gain.value = 0.08; o.start(); o.stop(audioCtx.currentTime + 0.2);
-    } else if (type === 'error') {
-      o.frequency.setValueAtTime(300, audioCtx.currentTime);
-      o.frequency.exponentialRampToValueAtTime(150, audioCtx.currentTime + 0.2);
-      g.gain.value = 0.08; o.start(); o.stop(audioCtx.currentTime + 0.25);
-    }
-  } catch (e) {}
-}
-
-/* ---------- STATS ---------- */
-function getStats() {
-  try { const s = JSON.parse(localStorage.getItem(STATS_KEY) || '{}'); return { total: s.total || 0, today: s.today || 0, date: s.date || '', streak: s.streak || 0 }; }
-  catch { return { total: 0, today: 0, date: '', streak: 0 }; }
-}
-function bumpStats() {
-  const s = getStats();
-  const today = new Date().toDateString();
-  if (s.date !== today) {
-    if (s.date && (new Date(s.date).getTime() > Date.now() - 2 * 86400000)) s.streak = (s.streak || 0) + 1;
-    else s.streak = 1;
-    s.today = 0; s.date = today;
-  }
-  s.total = (s.total || 0) + 1;
-  s.today = (s.today || 0) + 1;
-  localStorage.setItem(STATS_KEY, JSON.stringify(s));
-  renderStats();
-}
-function renderStats() {
-  const s = getStats();
-  animateNumber('statTotal', s.total);
-  animateNumber('statToday', s.today);
-  animateNumber('statStreak', s.streak);
-}
-function animateNumber(id, target) {
-  const el = $(id);
-  const start = parseInt(el.textContent) || 0;
-  const t0 = performance.now();
-  function step(t) {
-    const p = Math.min((t - t0) / 600, 1);
-    el.textContent = Math.floor(start + (target - start) * p);
-    if (p < 1) requestAnimationFrame(step); else el.textContent = target;
-  }
-  requestAnimationFrame(step);
-}
-
-/* ---------- ACHIEVEMENT ---------- */
-function showAchievement(text, icon = '🏆') {
-  const a = $('achievement');
-  a.querySelector('.achievement-icon').textContent = icon;
-  $('achievementText').textContent = text;
-  a.classList.add('show');
-  setTimeout(() => a.classList.remove('show'), 2800);
-}
-
-/* ---------- LOADING ---------- */
-function showLoading(text = 'INITIALIZING...') {
-  const o = $('loadingOverlay');
-  $('loadingText').textContent = text;
-  $('loadingProgress').style.width = '0%';
-  o.classList.add('show');
-  let p = 0;
-  const interval = setInterval(() => {
-    p += Math.random() * 15;
-    if (p > 90) p = 90;
-    $('loadingProgress').style.width = p + '%';
-  }, 150);
-  o._interval = interval;
-}
-function hideLoading() {
-  const o = $('loadingOverlay');
-  $('loadingProgress').style.width = '100%';
-  setTimeout(() => { o.classList.remove('show'); clearInterval(o._interval); }, 300);
-}
-
-/* ---------- MODAL ---------- */
-function openModal(id) { $(id).style.display = 'flex'; }
-function closeModal(id) { $(id).style.display = 'none'; }
-
-/* ---------- TABS ---------- */
-function switchTab(name) {
-  playSound('click');
-  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.nav === name));
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  $('panel-' + name).classList.add('active');
-  if (name === 'history') renderHistory();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-/* ---------- THEME ---------- */
-function toggleTheme() {
-  playSound('click');
-  document.body.classList.toggle('light');
-  const isLight = document.body.classList.contains('light');
-  localStorage.setItem(THEME_KEY, isLight ? 'light' : 'dark');
-  $('themeBtn').textContent = isLight ? '☀️' : '🌙';
-}
-(function initTheme() {
-  if (localStorage.getItem(THEME_KEY) === 'light') {
-    document.body.classList.add('light');
-    $('themeBtn').textContent = '☀️';
-  }
-})();
-
-/* ---------- FAQ ---------- */
-function toggleFaq(el) { el.parentElement.classList.toggle('open'); playSound('click'); }
-
-/* ---------- CONFETTI ---------- */
-function fireConfetti() {
-  const colors = ['#3b5bff', '#ef4444', '#ffffff', '#5b7bff', '#f87171'];
-  for (let i = 0; i < 50; i++) {
-    const c = document.createElement('div');
-    c.className = 'confetti';
-    c.style.left = Math.random() * 100 + 'vw'; c.style.top = '-20px';
-    c.style.background = colors[Math.floor(Math.random() * colors.length)];
-    c.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
-    c.style.width = c.style.height = (6 + Math.random() * 8) + 'px';
-    c.style.animationDuration = (1.5 + Math.random() * 1.5) + 's';
-    c.style.animationDelay = (Math.random() * 0.3) + 's';
-    document.body.appendChild(c);
-    setTimeout(() => c.remove(), 3500);
-  }
-}
-
-/* ---------- HISTORY ---------- */
-function getHistory() {
-  try { return JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]'); } catch { return []; }
-}
-function saveHistory(arr) { try { localStorage.setItem(HISTORY_KEY, JSON.stringify(arr.slice(0, MAX_HISTORY))); } catch {} }
-function addHistory(d, url) {
-  const arr = getHistory();
-  const isSlide = Array.isArray(d.images) && d.images.length > 0;
-  arr.unshift({
-    url,
-    title: d.title || '(tanpa deskripsi)',
-    author: d.author?.unique_id || '',
-    cover: d.origin_cover || d.cover || '',
-    type: isSlide ? 'slide' : 'video',
-    date: new Date().toISOString()
-  });
-  saveHistory(arr);
-}
-function setFilter(f) {
-  currentFilter = f;
-  document.querySelectorAll('.filter-chip').forEach(c => c.classList.toggle('active', c.dataset.filter === f));
-  renderHistory();
-  playSound('click');
-}
-function renderHistory() {
-  const arr = getHistory();
-  const q = ($('historySearch').value || '').toLowerCase();
-  let filtered = arr;
-  if (currentFilter !== 'all') filtered = filtered.filter(h => h.type === currentFilter);
-  if (q) filtered = filtered.filter(h => (h.title + ' ' + h.author + ' ' + h.url).toLowerCase().includes(q));
-  const el = $('historyList');
-  if (!filtered.length) {
-    el.innerHTML = `<div class="empty-state"><div class="empty-state-icon">📭</div><div class="empty-state-text">${q || currentFilter !== 'all' ? 'Tidak ada hasil.' : 'Belum ada riwayat.'}</div></div>`;
-    return;
-  }
-  el.innerHTML = filtered.map((h) => {
-    const origIdx = arr.indexOf(h);
-    return `
-    <div class="history-item">
-      <div class="batch-item-thumb">${h.cover ? `<img src="${escapeHtml(h.cover)}" onerror="this.parentElement.innerHTML='🎬'">` : '🎬'}</div>
-      <div class="history-item-info">
-        <div class="history-item-title">${escapeHtml(h.title)}</div>
-        <div class="history-item-date">${h.type === 'slide' ? '🖼️ ' : '🎬 '}${h.author ? '@' + escapeHtml(h.author) + ' · ' : ''}${new Date(h.date).toLocaleString('id-ID')}</div>
-      </div>
-      <button class="btn btn-secondary btn-sm" onclick="reuseHistory(${origIdx})" title="Download ulang">↻</button>
-    </div>`;
-  }).join('');
-}
-function reuseHistory(i) {
-  const arr = getHistory(); if (!arr[i]) return;
-  switchTab('video'); $('urlInput').value = arr[i].url; handleFetch();
-}
-function clearHistory() {
-  if (!confirm('Hapus semua riwayat?')) return;
-  localStorage.removeItem(HISTORY_KEY); renderHistory(); toast('✅ Riwayat dihapus');
-}
-function copyAllHistory() {
-  const arr = getHistory();
-  if (!arr.length) { toast('Tidak ada riwayat.'); return; }
-  const text = arr.map(h => h.url).join('\n');
-  navigator.clipboard.writeText(text).then(() => toast('📋 Semua link tersalin!')).catch(() => toast('❌ Gagal menyalin.'));
-}
-
-/* ---------- PASTE ---------- */
-async function pasteFromClipboard() {
-  try {
-    const text = await navigator.clipboard.readText();
-    if (text) { $('urlInput').value = text.trim(); toast('📋 Link ditempel!'); }
-  } catch { toast('❌ Gagal akses clipboard.'); }
-}
-
-/* ---------- TRENDING ---------- */
-const TRENDING_LINKS = {
-  anime: 'https://vt.tiktok.com/ZSqHKbkMa/',
-  music: 'https://vt.tiktok.com/ZSqHKbkMa/',
-  comedy: 'https://vt.tiktok.com/ZSqHKbkMa/',
-  dance: 'https://vt.tiktok.com/ZSqHKbkMa/'
-};
-function fillTrending(type) {
-  $('urlInput').value = TRENDING_LINKS[type] || TRENDING_LINKS.anime;
-  switchTab('video');
-  handleFetch();
-}
-
-/* ---------- FETCH VIDEO ---------- */
-async function handleFetch() {
-  const btn = $('fetchBtn');
-  const url = $('urlInput').value.trim();
-  if (!url) { setStatus('status', 'Masukkan link TikTok dulu.', 'error'); playSound('error'); return; }
-  if (!isValidTikTokUrl(url)) { setStatus('status', 'Link tidak valid. Pastikan dari tiktok.com', 'error'); playSound('error'); return; }
-
-  btn.disabled = true;
-  btn.innerHTML = '<span class="spinner"></span> Loading';
-  showLoading('MENGAMBIL DATA...');
-  setStatus('status', '', '');
-
-  try {
-    const data = await fetchWithRetry(url);
-    hideLoading();
-    setStatus('status', '✅ Berhasil! Data siap.', 'success');
-    renderResult(data.data);
-    addHistory(data.data, url);
-    bumpStats();
-    fireConfetti();
-    playSound('success');
-    showAchievement('Download siap! 🎉', '🏆');
-  } catch (err) {
-    hideLoading();
-    setStatus('status', '❌ ' + getErrorMessage(err, url), 'error');
-    $('resultContainer').innerHTML = '';
-    playSound('error');
-  } finally {
-    btn.disabled = false;
-    btn.textContent = 'Download';
-  }
-}
-
-function renderResult(d) {
-  if (!d) { setStatus('status', 'Data kosong.', 'error'); return; }
-  const isSlideshow = Array.isArray(d.images) && d.images.length > 0;
-  const avatar = d.author?.avatar ? `<img src="${escapeHtml(d.author.avatar)}" onerror="this.parentElement.innerHTML='👤'">` : '👤';
-  const name = d.author?.unique_id ? '@' + escapeHtml(d.author.unique_id) : 'TikTok User';
-  const desc = d.title || '(tanpa deskripsi)';
-
-  let previewHtml = '';
-  if (isSlideshow) {
-    previewHtml = `
-      <div class="video-preview" id="slideshowPreview">
-        <img id="slideImg" src="${escapeHtml(d.images[0])}" loading="lazy">
-        ${d.images.length > 1 ? `
-          <div class="slideshow-nav">
-            <button onclick="prevSlide()">‹</button>
-            <div class="slideshow-indicator"><span id="slideIdx">1</span>/${d.images.length}</div>
-            <button onclick="nextSlide()">›</button>
-          </div>` : ''}
-      </div>`;
-    window.__slides = d.images;
-    window.__slideIdx = 0;
-  } else {
-    previewHtml = `<div class="video-preview"><video controls playsinline preload="metadata" poster="${escapeHtml(d.origin_cover || '')}"><source src="${escapeHtml(d.play || d.wmplay || '')}" type="video/mp4"></video></div>`;
-  }
-
-  const statsHtml = `
-    <div class="stats">
-      <div class="stat"><div class="stat-value">${formatNumber(d.play_count)}</div><div class="stat-label">Views</div></div>
-      <div class="stat"><div class="stat-value">${formatNumber(d.digg_count)}</div><div class="stat-label">Likes</div></div>
-      <div class="stat"><div class="stat-value">${formatNumber(d.comment_count)}</div><div class="stat-label">Comments</div></div>
-      <div class="stat"><div class="stat-value">${formatNumber(d.share_count)}</div><div class="stat-label">Shares</div></div>
-    </div>`;
-
-  let extraMeta = '';
-  if (d.music_info?.title) {
-    extraMeta += `<div style="padding: 10px 16px; font-size: 12px; color: var(--text-muted); border-bottom: 1px solid var(--border);">🎵 ${escapeHtml(d.music_info.title)}${d.music_info.author ? ' · ' + escapeHtml(d.music_info.author) : ''}</div>`;
-  }
-
-  let downloadHtml = '';
-  if (isSlideshow) {
-    downloadHtml = `
-      <div class="download-group-title">Slide Foto (${d.images.length})</div>
-      <div class="download-row">
-        ${d.images.slice(0, 4).map((img, i) => `<a class="btn" href="${escapeHtml(img)}" target="_blank" rel="noopener" download="tiv_slide_${i+1}.jpg">🖼️ Foto ${i+1}</a>`).join('')}
-      </div>
-      ${d.music ? `<div class="download-group-title" style="margin-top: 10px;">Audio</div><div class="download-row" style="grid-template-columns:1fr;"><a class="btn btn-secondary" href="${escapeHtml(d.music)}" target="_blank" rel="noopener" download="tiv_audio.mp3">🎵 MP3</a></div>` : ''}
-    `;
-  } else {
-    downloadHtml = `
-      <div class="download-group-title">Video</div>
-      <div class="download-row">
-        <a class="btn" href="${escapeHtml(d.hdplay || d.play)}" target="_blank" rel="noopener" download="tiv_hd.mp4">🎬 HD (No WM)</a>
-        <a class="btn btn-secondary" href="${escapeHtml(d.play || d.wmplay)}" target="_blank" rel="noopener" download="tiv_sd.mp4">📱 SD</a>
-      </div>
-      ${d.music ? `<div class="download-group-title" style="margin-top: 10px;">Audio</div><div class="download-row" style="grid-template-columns:1fr;"><a class="btn btn-secondary" href="${escapeHtml(d.music)}" target="_blank" rel="noopener" download="tiv_audio.mp3">🎵 MP3</a></div>` : ''}
-    `;
-  }
-
-  const safeDesc = desc.replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\$/g, '\\$').replace(/'/g, "\\'");
-  const originalUrl = $('urlInput').value.trim();
-
-  $('resultContainer').innerHTML = `
-    <div class="result">
-      <div class="result-header">
-        <div class="author-avatar">${avatar}</div>
-        <div class="author-info">
-          <div class="author-name">${name}</div>
-          <div class="author-desc">${escapeHtml(desc)}</div>
-        </div>
-      </div>
-      ${previewHtml}
-      ${statsHtml}
-      ${extraMeta}
-      <div class="download-section">${downloadHtml}</div>
-      <div class="actions-row">
-        <button class="btn btn-secondary" onclick="copyCaption('${safeDesc}')">📋 Copy</button>
-        <button class="btn btn-secondary" onclick="copyOriginalUrl('${originalUrl.replace(/'/g, "\\'")}')">🔗 Link</button>
-        <button class="btn btn-secondary" onclick="shareVideo('${escapeHtml(name)}','${originalUrl.replace(/'/g, "\\'")}')">📤 Share</button>
-        <button class="btn btn-secondary" onclick="resetAll()">🔄 Reset</button>
-      </div>
-    </div>`;
-
-  window.__currentCaption = desc;
-}
-
-function prevSlide() {
-  if (!window.__slides) return;
-  window.__slideIdx = (window.__slideIdx - 1 + window.__slides.length) % window.__slides.length;
-  $('slideImg').src = window.__slides[window.__slideIdx];
-  $('slideIdx').textContent = window.__slideIdx + 1;
-}
-function nextSlide() {
-  if (!window.__slides) return;
-  window.__slideIdx = (window.__slideIdx + 1) % window.__slides.length;
-  $('slideImg').src = window.__slides[window.__slideIdx];
-  $('slideIdx').textContent = window.__slideIdx + 1;
-}
-
-function copyCaption(text) {
-  if (!text) { toast('Tidak ada caption.'); return; }
-  navigator.clipboard.writeText(text).then(() => { toast('✅ Caption tersalin!'); playSound('success'); }).catch(() => toast('❌ Gagal.'));
-}
-function copyOriginalUrl(url) {
-  if (!url) { toast('Tidak ada link.'); return; }
-  navigator.clipboard.writeText(url).then(() => toast('🔗 Link asli tersalin!')).catch(() => toast('❌ Gagal.'));
-}
-function shareVideo(name, url) {
-  const text = `Tonton video ${name} di TikTok: ${url}`;
-  if (navigator.share) {
-    navigator.share({ title: 'Tiv Downloader', text, url }).catch(() => {});
-  } else {
-    const wa = `https://wa.me/?text=${encodeURIComponent(text)}`;
-    window.open(wa, '_blank');
-  }
-}
-function resetAll() {
-  $('urlInput').value = ''; $('resultContainer').innerHTML = ''; setStatus('status', ''); $('urlInput').focus();
-  window.__slides = null;
-}
-
-/* ---------- AUDIO ---------- */
-async function handleAudio() {
-  const url = $('audioInput').value.trim();
-  if (!url) { setStatus('audioStatus', 'Masukkan link dulu.', 'error'); return; }
-  if (!isValidTikTokUrl(url)) { setStatus('audioStatus', 'Link tidak valid.', 'error'); return; }
-  showLoading('MENGAMBIL AUDIO...');
-  $('audioResult').innerHTML = '';
-  try {
-    const data = await fetchWithRetry(url);
-    const d = data.data;
-    if (!d.music) throw new Error('Audio tidak ditemukan.');
-    hideLoading();
-    setStatus('audioStatus', '✅ Audio siap diunduh!', 'success');
-    fireConfetti(); playSound('success'); showAchievement('Audio siap! 🎵', '🎵');
-    $('audioResult').innerHTML = `
-      <div class="result">
-        <div class="result-header">
-          <div class="author-avatar">🎵</div>
-          <div class="author-info">
-            <div class="author-name">Audio TikTok</div>
-            <div class="author-desc">${escapeHtml(d.music_info?.title || d.title || 'Audio')}</div>
-          </div>
-        </div>
-        <div class="download-section">
-          <audio controls style="width: 100%;" src="${escapeHtml(d.music)}"></audio>
-          <a class="btn btn-block" href="${escapeHtml(d.music)}" target="_blank" rel="noopener" download="tiv_audio.mp3" style="margin-top: 12px;">⬇️ Download MP3</a>
-        </div>
-      </div>`;
-  } catch (err) { hideLoading(); setStatus('audioStatus', '❌ ' + getErrorMessage(err, url), 'error'); playSound('error'); }
-}
-
-/* ---------- BATCH ---------- */
-async function handleBatch() {
-  const raw = $('batchInput').value.trim();
-  if (!raw) { setStatus('batchStatus', 'Tempel minimal 1 link.', 'error'); return; }
-  const urls = raw.split('\n').map(s => s.trim()).filter(s => s && isValidTikTokUrl(s));
-  if (!urls.length) { setStatus('batchStatus', 'Tidak ada link valid.', 'error'); return; }
-  const btn = $('batchBtn'); btn.disabled = true; $('batchList').innerHTML = '';
-  $('batchProgressWrap').innerHTML = `<div class="batch-progress"><span id="batchCount">0/${urls.length}</span><div class="batch-progress-bar"><div class="batch-progress-fill" id="batchFill"></div></div></div>`;
-  setStatus('batchStatus', `<span class="spinner"></span> Memproses...`, 'info');
-  let ok = 0, fail = 0;
-  for (let i = 0; i < urls.length; i++) {
-    $('batchCount').textContent = `${i+1}/${urls.length}`;
-    $('batchFill').style.width = ((i)/urls.length*100) + '%';
-    const item = document.createElement('div');
-    item.className = 'batch-item';
-    item.innerHTML = `<div class="batch-item-thumb">⏳</div><div class="batch-item-info"><div class="batch-item-title">${escapeHtml(urls[i])}</div><div class="batch-item-status">Memproses...</div></div>`;
-    $('batchList').appendChild(item);
-    try {
-      const data = await fetchWithRetry(urls[i]);
-      const d = data.data;
-      const cover = d.origin_cover || d.cover || '';
-      item.querySelector('.batch-item-thumb').innerHTML = cover ? `<img src="${escapeHtml(cover)}" onerror="this.parentElement.innerHTML='🎬'">` : '🎬';
-      item.querySelector('.batch-item-title').textContent = d.title || 'Tanpa deskripsi';
-      const isSlide = Array.isArray(d.images) && d.images.length > 0;
-      item.querySelector('.batch-item-status').innerHTML = `✅ Siap (${isSlide ? d.images.length + ' foto' : 'video'})`;
-      item.querySelector('.batch-item-status').className = 'batch-item-status ok';
-      const dlUrl = isSlide ? d.images[0] : (d.hdplay || d.play);
-      item.querySelector('.batch-item-info').insertAdjacentHTML('beforeend', `<div style="margin-top: 8px;"><a class="btn btn-sm" href="${escapeHtml(dlUrl)}" target="_blank" rel="noopener" download="tiv_${ok+1}.mp4">⬇️ Download</a></div>`);
-      ok++; bumpStats();
-    } catch (e) {
-      item.querySelector('.batch-item-thumb').innerHTML = '❌';
-      item.querySelector('.batch-item-status').textContent = '❌ Gagal';
-      item.querySelector('.batch-item-status').className = 'batch-item-status err';
-      fail++;
-    }
-    await new Promise(r => setTimeout(r, 600));
-  }
-  $('batchFill').style.width = '100%';
-  setStatus('batchStatus', `✅ Selesai: ${ok} berhasil, ${fail} gagal.`, 'success');
-  if (ok > 0) { fireConfetti(); playSound('success'); showAchievement(`${ok} video siap! 🎉`, '🏆'); }
-  btn.disabled = false;
-}
-function clearBatch() { $('batchInput').value = ''; $('batchList').innerHTML = ''; $('batchProgressWrap').innerHTML = ''; setStatus('batchStatus', ''); }
-
-/* ---------- PWA ---------- */
-let deferredPrompt = null;
-window.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault();
-  deferredPrompt = e;
-  $('installBanner').classList.add('show');
-});
-function installPWA() {
-  if (!deferredPrompt) { $('installBanner').classList.remove('show'); return; }
-  deferredPrompt.prompt();
-  deferredPrompt.userChoice.then(() => { deferredPrompt = null; $('installBanner').classList.remove('show'); });
-}
-
-/* ---------- SCROLL: AUTO-HIDE BOTTOM NAV ---------- */
-let lastScrollY = 0;
-window.addEventListener('scroll', () => {
-  const nav = $('bottomNav');
-  const y = window.scrollY;
-  if (y > lastScrollY && y > 300) nav.classList.add('hide');
-  else nav.classList.remove('hide');
-  lastScrollY = y;
-});
-
-/* ---------- SCROLL REVEAL ---------- */
-(function initReveal() {
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-})();
-
-/* ---------- AUTO DETECT PASTE ---------- */
-$('urlInput').addEventListener('paste', () => {
-  setTimeout(() => { const v = $('urlInput').value.trim(); if (isValidTikTokUrl(v)) handleFetch(); }, 100);
-});
-$('urlInput').addEventListener('keydown', e => { if (e.key === 'Enter') handleFetch(); });
-$('audioInput').addEventListener('keydown', e => { if (e.key === 'Enter') handleAudio(); });
-
-/* ---------- KEYBOARD SHORTCUT ---------- */
-document.addEventListener('keydown', (e) => {
-  if ((e.ctrlKey || e.metaKey) && e.key === 'v') {
-    if (document.activeElement === document.body) {
-      setTimeout(() => { const v = $('urlInput').value.trim(); if (isValidTikTokUrl(v)) handleFetch(); }, 100);
-    }
-  }
-});
-
-/* ---------- AUTO-DETECT CLIPBOARD ON LOAD ---------- */
-window.addEventListener('load', async () => {
-  try {
-    const text = await navigator.clipboard.readText();
-    if (text && isValidTikTokUrl(text) && !$('urlInput').value) {
-      $('urlInput').value = text.trim();
-      toast('📋 Link TikTok terdeteksi di clipboard!');
-    }
-  } catch {}
-});
-
-/* ---------- INIT ---------- */
-(function init() {
-  $('year').textContent = new Date().getFullYear();
-  renderStats();
-  renderHistory();
-})();
-</script>
-
+<script src="script.js"></script>
 </body>
- </html>
+       </html>
