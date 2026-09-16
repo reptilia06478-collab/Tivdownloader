@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0f1e">
+<meta name="description" content="Tiv Games — Kumpulan mini game seru: Kuis TikTok, Reaction Tap, Memory Card, Snake Classic.">
+<meta name="author" content="PANN">
+<title>Tiv Games — Mini Games Seru</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233b5bff'/><text x='50' y='70' font-size='56' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>T</text></svg>">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* GAME-SPECIFIC STYLES */
+  .game-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 0 16px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (max-width: 600px) {
+    .game-nav { grid-template-columns: repeat(2, 1fr); }
+  }
+  .game-tab {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    font-family: inherit;
+    color: var(--text);
+  }
+  .game-tab:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+  .game-tab.active {
+    background: var(--blue-grad);
+    color: white;
+    border-color: transparent;
+    box-shadow: var(--shadow-glow);
+  }
+  .game-tab-emoji { font-size: 24px; display: block; margin-bottom: 4px; }
+  .game-tab-name { font-size: 11px; font-weight: 700; }
+
+  .game-panel { display: none; }
+  .game-panel.active { display: block; animation: fadeIn 0.3s ease-out; }
+
+  .game-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .game-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+  }
+  .game-header p {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .game-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .game-stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .game-stat-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--blue-light);
+  }
+  .game-stat-label {
+    font-size: 10px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+    font-weight: 700;
+  }
+
+  /* KUIS */
+  .quiz-question {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.4;
+    min-height: 60px;
+  }
+  .quiz-options {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .quiz-option {
+    padding: 16px 20px;
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    transition: all 0.25s;
+  }
+  .quiz-option:hover:not(:disabled) {
+    border-color: var(--blue);
+    transform: translateX(4px);
+  }
+  .quiz-option.correct {
+    background: rgba(34,197,94,0.2);
+    border-color: #22c55e;
+    color: #86efac;
+  }
+  .quiz-option.wrong {
+    background: rgba(239,68,68,0.2);
+    border-color: var(--red);
+    color: #fca5a5;
+  }
+  .quiz-option:disabled { cursor: not-allowed; }
+
+  /* REACTION */
+  .reaction-arena {
+    width: 100%;
+    height: 320px;
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border);
+    background: var(--card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    transition: background 0.2s;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .reaction-arena.wait { background: rgba(239,68,68,0.2); color: #fca5a5; }
+  .reaction-arena.ready { background: rgba(34,197,94,0.25); color: #86efac; }
+  .reaction-arena.tap { background: rgba(59,91,255,0.2); color: #93b4ff; }
+
+  /* MEMORY */
+  .memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 480px) {
+    .memory-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  }
+  .memory-card {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    background: var(--blue-grad);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 2px solid transparent;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  .memory-card:hover:not(.matched) { transform: scale(1.05); border-color: var(--blue-light); }
+  .memory-card .card-back {
+    font-size: 28px;
+    color: white;
+  }
+  .memory-card.flipped {
+    background: var(--card);
+    border-color: var(--border-strong);
+  }
+  .memory-card.matched {
+    background: rgba(34,197,94,0.25);
+    border-color: #22c55e;
+    cursor: default;
+    animation: matchPulse 0.6s;
+  }
+  @keyframes matchPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+
+  /* SNAKE */
+  .snake-canvas-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  #snakeCanvas {
+    border: 2px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: #0a0f1e;
+    max-width: 100%;
+    touch-action: none;
+  }
+  .snake-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: repeat(3, 60px);
+    gap: 6px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .snake-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    font-size: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .snake-btn:hover { background: var(--card-hover); border-color: var(--blue); }
+  .snake-btn:active { transform: scale(0.92); }
+  .snake-btn.up    { grid-column: 2; grid-row: 1; }
+  .snake-btn.left  { grid-column: 1; grid-row: 2; }
+  .snake-btn.down  { grid-column: 2; grid-row: 2; }
+  .snake-btn.right { grid-column: 3; grid-row: 2; }
+
+  /* GAME RESULT MODAL */
+  .game-result {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s;
+  }
+  .game-result.show { display: flex; }
+  .game-result-card {
+    background: var(--card-solid);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    max-width: 380px;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    animation: modalIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .game-result-icon {
+    font-size: 64px;
+    margin-bottom: 14px;
+  }
+  .game-result-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .game-result-score {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+  .game-result-score strong {
+    color: var(--blue-light);
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .game-btn-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="auroraCanvas"></canvas>
+<canvas id="meshCanvas"></canvas>
+<canvas id="particleCanvas"></canvas>
+<canvas id="starCanvas"></canvas>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">⬇</div>
+      <div class="nav-logo-text">Tiv<span class="red">.</span></div>
+    </a>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" id="themeBtn" onclick="toggleTheme()" title="Ganti tema">🌙</button>
+      <button class="nav-icon-btn" id="menuBtn" onclick="openDrawer()" title="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<!-- DRAWER MENU -->
+<div class="drawer-backdrop" id="drawerBackdrop" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-title">Menu</div>
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  </div>
+  <div class="drawer-section">
+    <div class="drawer-section-title">Navigasi</div>
+    <a href="index.html" class="drawer-link"><span class="drawer-link-icon">🏠</span><span>Beranda</span></a>
+    <a href="games.html" class="drawer-link"><span class="drawer-link-icon">🎮</span><span>Games</span><span class="drawer-link-badge">4</span></a>
+    <a href="tools.html" class="drawer-link"><span class="drawer-link-icon">🛠️</span><span>Tools</span><span class="drawer-link-badge">6</span></a>
+  </div>
+  <div class="drawer-section">
+    <div class="drawer-section-title">Game</div>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); switchGame('quiz'); return false;"><span class="drawer-link-icon">🎯</span><span>Kuis TikTok</span></a>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); switchGame('reaction'); return false;"><span class="drawer-link-icon">⚡</span><span>Reaction Tap</span></a>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); switchGame('memory'); return false;"><span class="drawer-link-icon">🧠</span><span>Memory Card</span></a>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); switchGame('snake'); return false;"><span class="drawer-link-icon">🐍</span><span>Snake</span></a>
+  </div>
+</aside>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">🎮 Mini Games</div>
+  <h1>Main sambil <span class="shine">santai</span></h1>
+  <p>4 mini game seru buat ngisi waktu luang. Semua bisa dimainkan tanpa login, langsung di browser.</p>
+</div>
+
+<!-- GAME NAV -->
+<div class="game-nav">
+  <button class="game-tab active" data-game="quiz" onclick="switchGame('quiz')">
+    <span class="game-tab-emoji">🎯</span>
+    <span class="game-tab-name">Kuis</span>
+  </button>
+  <button class="game-tab" data-game="reaction" onclick="switchGame('reaction')">
+    <span class="game-tab-emoji">⚡</span>
+    <span class="game-tab-name">Reaction</span>
+  </button>
+  <button class="game-tab" data-game="memory" onclick="switchGame('memory')">
+    <span class="game-tab-emoji">🧠</span>
+    <span class="game-tab-name">Memory</span>
+  </button>
+  <button class="game-tab" data-game="snake" onclick="switchGame('snake')">
+    <span class="game-tab-emoji">🐍</span>
+    <span class="game-tab-name">Snake</span>
+  </button>
+</div>
+
+<!-- CONTAINER -->
+<div class="container">
+
+  <!-- GAME: KUIS -->
+  <div class="game-panel active" id="game-quiz">
+    <div class="game-header">
+      <h2>🎯 Kuis TikTok</h2>
+      <p>Jawab 10 pertanyaan seputar TikTok. Skor tertinggi menang!</p>
+    </div>
+    <div class="game-stats">
+      <div class="game-stat">
+        <div class="game-stat-value" id="quizScore">0</div>
+        <div class="game-stat-label">Skor</div>
+      </div>
+      <div class="game-stat">
+        <div class="game-stat-value" id="quizQ">1/10</div>
+        <div class="game-stat-label">Soal</div>
+      </div>
+      <div class="game-stat">
+        <div class="game-stat-value" id="quizBest">0</div>
+        <div class="game-stat-label">Terbaik</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="quiz-question" id="quizQuestion">Memuat soal...</div>
+      <div class="quiz-options" id="quizOptions"></div>
+      <button class="btn btn-secondary btn-block" onclick="startQuiz()" id="quizRestart" style="display:none;">🔄 Main Lagi</button>
+    </div>
+  </div>
+
+  <!-- GAME: REACTION -->
+  <div class="game-panel" id="game-reaction">
+    <div class="game-header">
+      <h2>⚡ Reaction Tap</h2>
+      <p>Tunggu warna hijau, lalu tap secepat mungkin!</p>
+    </div>
+    <div class="game-stats">
+      <div class="game-stat">
+        <div class="game-stat-value" id="reactionLast">-</div>
+        <div class="game-stat-label">Terakhir (ms)</div>
+      </div>
+      <div class="game-stat">
+        <div class="game-stat-value" id="reactionBest">-</div>
+        <div class="game-stat-label">Terbaik (ms)</div>
+      </div>
+      <div class="game-stat">
+        <div class="game-stat-value" id="reactionTries">0</div>
+        <div class="game-stat-label">Percobaan</div>
+      </div>
+    </div>
+    <div class="reaction-arena wait" id="reactionArena" onclick="reactionTap()">
+      <div>
+        <div style="font-size: 42px; margin-bottom: 8px;">🔴</div>
+        <div id="reactionText">Klik untuk mulai</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME: MEMORY -->
+  <div class="game-panel" id="game-memory">
+    <div class="game-header">
+      <h2>🧠 Memory Card</h2>
+      <p>Cocokkan semua pasangan emoji dalam waktu sesingkat mungkin.</p>
+    </div>
+    <div class="game-stats">
+      <div class="game-stat">
+        <div class="game-stat-value" id="memoryMoves">0</div>
+        <div class="game-stat-label">Langkah</div>
+      </div>
+      <div class="game-stat">
+        <div class="game-stat-value" id="memoryTime">0s</div>
+        <div class="game-stat-label">Waktu</div>
+      </div>
+      <div class="game-stat">
+        <div class="game-stat-value" id="memoryPairs">0/8</div>
+        <div class="game-stat-label">Pasangan</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="memory-grid" id="memoryGrid"></div>
+      <button class="btn btn-block" onclick="startMemory()">🔄 Main Lagi</button>
+    </div>
+  </div>
+
+  <!-- GAME: SNAKE -->
+  <div class="game-panel" id="game-snake">
+    <div class="game-header">
+      <h2>🐍 Snake Classic</h2>
+      <p>Gerakkan ular, makan apel, jangan nabrak dinding atau diri sendiri.</p>
+    </div>
+    <div class="game-stats">
+      <div class="game-stat">
+        <div class="game-stat-value" id="snakeScore">0</div>
+        <div class="game-stat-label">Skor</div>
+      </div>
+      <div class="game-stat">
+        <div class="game-stat-value" id="snakeBest">0</div>
+        <div class="game-stat-label">Terbaik</div>
+      </div>
+      <div class="game-stat">
+        <div class="game-stat-value" id="snakeSpeed">1x</div>
+        <div class="game-stat-label">Speed</div>
+      </div>
+    </div>
+    <div class="snake-canvas-wrap">
+      <canvas id="snakeCanvas" width="320" height="320"></canvas>
+    </div>
+    <div class="snake-controls">
+      <button class="snake-btn up" onclick="snakeDir('up')">▲</button>
+      <button class="snake-btn left" onclick="snakeDir('left')">◄</button>
+      <button class="snake-btn down" onclick="snakeDir('down')">▼</button>
+      <button class="snake-btn right" onclick="snakeDir('right')">►</button>
+    </div>
+    <div style="text-align:center;margin-top:16px;">
+      <button class="btn" onclick="startSnake()">🎮 Main</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Beranda</a>
+    <a href="games.html">Games</a>
+    <a href="tools.html">Tools</a>
+  </div>
+  <div class="dev-credit">👨‍💻 Developer: <span>PANN</span></div>
+  <div>© <span id="year">2026</span> Tiv Games · Dibuat dengan ❤️</div>
+</footer>
+
+<!-- GAME RESULT MODAL -->
+<div class="game-result" id="gameResult">
+  <div class="game-result-card">
+    <div class="game-result-icon" id="gameResultIcon">🎉</div>
+    <div class="game-result-title" id="gameResultTitle">Selesai!</div>
+    <div class="game-result-score" id="gameResultScore">Skor: <strong>0</strong></div>
+    <div class="game-btn-row">
+      <button class="btn btn-secondary" onclick="closeGameResult()">Tutup</button>
+      <button class="btn" onclick="restartCurrentGame()">🔄 Main Lagi</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+<script src="games.js"></script>
+</body>
+  </html>
