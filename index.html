@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0f1e">
+<meta name="description" content="Tiv Downloader — Download video TikTok Full HD tanpa watermark, MP3, slide foto. Gratis, cepat, tanpa login.">
+<meta name="keywords" content="download tiktok, tiktok tanpa watermark, tiktok downloader, tiktok mp3, tiktok hd">
+<meta name="author" content="PANN">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tiv Downloader — Download TikTok Tanpa Watermark HD">
+<meta property="og:description" content="Download video TikTok tanpa watermark, Full HD. Gratis, cepat, tanpa login.">
+<meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'><rect width='1200' height='630' fill='%230a0f1e'/><text x='600' y='300' font-size='90' fill='%233b5bff' text-anchor='middle' font-family='sans-serif' font-weight='bold'>Tiv Downloader</text><text x='600' y='390' font-size='38' fill='%23ef4444' text-anchor='middle' font-family='sans-serif'>Download TikTok Tanpa Watermark</text></svg>">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tiv Downloader — Download TikTok Tanpa Watermark HD">
+<meta name="twitter:description" content="Download video TikTok tanpa watermark, Full HD. Gratis, cepat, tanpa login.">
+
+<title>Tiv Downloader — Download TikTok Tanpa Watermark HD</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233b5bff'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>T</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%233b5bff'/><text x='90' y='122' font-size='110' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>T</text></svg>">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="auroraCanvas"></canvas>
+<canvas id="meshCanvas"></canvas>
+<canvas id="particleCanvas"></canvas>
+<canvas id="starCanvas"></canvas>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">⬇</div>
+      <div class="nav-logo-text">Tiv<span class="red">.</span></div>
+    </a>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" id="themeBtn" onclick="toggleTheme()" title="Ganti tema">🌙</button>
+      <button class="nav-icon-btn" id="menuBtn" onclick="openDrawer()" title="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<!-- DRAWER MENU -->
+<div class="drawer-backdrop" id="drawerBackdrop" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-title">Menu</div>
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  </div>
+
+  <div class="drawer-section">
+    <div class="drawer-section-title">Navigasi</div>
+    <a href="index.html" class="drawer-link">
+      <span class="drawer-link-icon">🏠</span><span>Beranda</span>
+    </a>
+    <a href="games.html" class="drawer-link">
+      <span class="drawer-link-icon">🎮</span><span>Games</span>
+      <span class="drawer-link-badge">4</span>
+    </a>
+    <a href="tools.html" class="drawer-link">
+      <span class="drawer-link-icon">🛠️</span><span>Tools</span>
+      <span class="drawer-link-badge">6</span>
+    </a>
+  </div>
+
+  <div class="drawer-section">
+    <div class="drawer-section-title">Fitur Download</div>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); switchTab('video'); return false;">
+      <span class="drawer-link-icon">🎬</span><span>Video TikTok</span>
+    </a>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); switchTab('audio'); return false;">
+      <span class="drawer-link-icon">🎵</span><span>MP3 Audio</span>
+    </a>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); switchTab('batch'); return false;">
+      <span class="drawer-link-icon">📦</span><span>Batch Download</span>
+    </a>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); switchTab('history'); return false;">
+      <span class="drawer-link-icon">🕐</span><span>Riwayat</span>
+    </a>
+  </div>
+
+  <div class="drawer-section">
+    <div class="drawer-section-title">Info</div>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); openModal('aboutModal'); return false;">
+      <span class="drawer-link-icon">ℹ️</span><span>Tentang</span>
+    </a>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); openModal('disclaimerModal'); return false;">
+      <span class="drawer-link-icon">⚠️</span><span>Disclaimer</span>
+    </a>
+  </div>
+
+  <div class="drawer-section">
+    <div class="drawer-section-title">Pengaturan</div>
+    <a href="#" class="drawer-link" onclick="closeDrawer(); toggleTheme(); return false;">
+      <span class="drawer-link-icon">🌓</span><span>Ganti Tema</span>
+    </a>
+  </div>
+</aside>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Free · No Login · By PANN</div>
+  <h1>Download TikTok<br><span class="red">Tanpa Watermark</span> <span class="shine">Full HD</span></h1>
+  <p>Tempel link TikTok, ambil video HD-nya, atau ekstrak audio MP3-nya. Gratis, cepat, tanpa daftar akun.</p>
+  <div class="hero-stats">
+    <span>⚡ <strong>Cepat</strong></span>
+    <span>💧 <strong>Tanpa Watermark</strong></span>
+    <span>🎬 <strong>HD Quality</strong></span>
+    <span>🆓 <strong>Gratis</strong></span>
+  </div>
+</div>
+
+<!-- INSTALL BANNER -->
+<div class="install-banner" id="installBanner">
+  <span>📱 Install Tiv sebagai app?</span>
+  <button onclick="installPWA()">Install</button>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard">
+  <div class="dash-item"><div class="dash-value" id="statTotal">0</div><div class="dash-label">Total</div></div>
+  <div class="dash-item"><div class="dash-value" id="statToday">0</div><div class="dash-label">Hari Ini</div></div>
+  <div class="dash-item"><div class="dash-value" id="statStreak">0</div><div class="dash-label">Streak</div></div>
+  <div class="dash-item"><div class="dash-value">∞</div><div class="dash-label">Gratis</div></div>
+</div>
+
+<!-- DOWNLOAD BOX -->
+<div class="download-box">
+  <div class="download-input-wrap">
+    <input type="text" id="urlInput" placeholder="Tempel link TikTok di sini..." autocomplete="off" spellcheck="false">
+    <button class="btn-paste" onclick="pasteFromClipboard()">📋 Paste</button>
+    <button class="btn-download-main" id="fetchBtn" onclick="handleFetch()">Download</button>
+  </div>
+  <div class="status" id="status"></div>
+</div>
+
+<!-- TABS -->
+<div class="container">
+  <div class="tabs">
+    <button class="tab active" data-tab="video" onclick="switchTab('video')">🎬 Video</button>
+    <button class="tab" data-tab="audio" onclick="switchTab('audio')">🎵 MP3</button>
+    <button class="tab" data-tab="batch" onclick="switchTab('batch')">📦 Batch</button>
+    <button class="tab" data-tab="history" onclick="switchTab('history')">🕐 Riwayat</button>
+  </div>
+
+  <!-- PANEL: VIDEO -->
+  <div class="panel active" id="panel-video">
+    <div id="resultContainer"></div>
+
+    <!-- TRENDING -->
+    <div class="card">
+      <div class="card-title">🔥 Trending</div>
+      <div class="card-desc">Klik salah satu buat coba cepat.</div>
+      <div class="trending-grid">
+        <div class="trending-item" onclick="fillTrending('anime')">
+          <div class="trending-emoji">🎌</div>
+          <div class="trending-title">Anime</div>
+          <div class="trending-sub">Coba</div>
+        </div>
+        <div class="trending-item" onclick="fillTrending('music')">
+          <div class="trending-emoji">🎵</div>
+          <div class="trending-title">Music</div>
+          <div class="trending-sub">Coba</div>
+        </div>
+        <div class="trending-item" onclick="fillTrending('comedy')">
+          <div class="trending-emoji">😂</div>
+          <div class="trending-title">Comedy</div>
+          <div class="trending-sub">Coba</div>
+        </div>
+        <div class="trending-item" onclick="fillTrending('dance')">
+          <div class="trending-emoji">💃</div>
+          <div class="trending-title">Dance</div>
+          <div class="trending-sub">Coba</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="card">
+      <div class="card-title">🚀 Quick Access</div>
+      <div class="card-desc">Buka fitur lain dengan cepat.</div>
+      <div class="trending-grid">
+        <a href="games.html" class="trending-item" style="text-decoration:none;color:inherit;">
+          <div class="trending-emoji">🎮</div>
+          <div class="trending-title">Games</div>
+          <div class="trending-sub">4 Game</div>
+        </a>
+        <a href="tools.html" class="trending-item" style="text-decoration:none;color:inherit;">
+          <div class="trending-emoji">🛠️</div>
+          <div class="trending-title">Tools</div>
+          <div class="trending-sub">6 Tools</div>
+        </a>
+        <div class="trending-item" onclick="switchTab('batch')">
+          <div class="trending-emoji">📦</div>
+          <div class="trending-title">Batch</div>
+          <div class="trending-sub">Massal</div>
+        </div>
+        <div class="trending-item" onclick="switchTab('audio')">
+          <div class="trending-emoji">🎵</div>
+          <div class="trending-title">MP3</div>
+          <div class="trending-sub">Audio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL: AUDIO -->
+  <div class="panel" id="panel-audio">
+    <div class="card">
+      <div class="card-title">🎵 Ambil Audio (MP3)</div>
+      <div class="card-desc">Tempel link TikTok, kita ambil audio-nya aja.</div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <input type="text" id="audioInput" class="input-clean" placeholder="Link TikTok..." autocomplete="off" spellcheck="false" style="flex: 1; min-width: 180px;">
+        <button class="btn" onclick="handleAudio()">Ambil MP3</button>
+      </div>
+      <div class="status" id="audioStatus"></div>
+    </div>
+    <div id="audioResult"></div>
+  </div>
+
+  <!-- PANEL: BATCH -->
+  <div class="panel" id="panel-batch">
+    <div class="card">
+      <div class="card-title">📦 Batch Download</div>
+      <div class="card-desc">Tempel banyak link sekaligus — satu link per baris.</div>
+      <textarea id="batchInput" placeholder="https://vt.tiktok.com/xxx&#10;https://vt.tiktok.com/yyy&#10;https://vt.tiktok.com/zzz"></textarea>
+      <div style="display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;">
+        <button class="btn" onclick="handleBatch()" id="batchBtn" style="flex: 1;">🚀 Proses Semua</button>
+        <button class="btn btn-secondary" onclick="clearBatch()">🗑️</button>
+      </div>
+      <div class="status" id="batchStatus"></div>
+    </div>
+    <div id="batchProgressWrap"></div>
+    <div class="batch-list" id="batchList"></div>
+  </div>
+
+  <!-- PANEL: HISTORY -->
+  <div class="panel" id="panel-history">
+    <div class="card">
+      <div class="card-title">🕐 Riwayat Download</div>
+      <div class="history-toolbar">
+        <input type="text" id="historySearch" class="input-clean" placeholder="🔍 Cari riwayat..." oninput="renderHistory()">
+        <button class="btn btn-secondary btn-sm" onclick="copyAllHistory()">📋 Copy</button>
+        <button class="btn btn-secondary btn-sm" onclick="clearHistory()">🗑️ Hapus</button>
+      </div>
+      <div class="filter-chips" id="filterChips">
+        <button class="filter-chip active" data-filter="all" onclick="setFilter('all')">Semua</button>
+        <button class="filter-chip" data-filter="video" onclick="setFilter('video')">🎬 Video</button>
+        <button class="filter-chip" data-filter="slide" onclick="setFilter('slide')">🖼️ Slide</button>
+        <button class="filter-chip" data-filter="audio" onclick="setFilter('audio')">🎵 Audio</button>
+      </div>
+      <div class="history-list" id="historyList"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: WHY -->
+<section class="reveal">
+  <div class="container-wide">
+    <div class="section-label">Kenapa Tiv</div>
+    <h2 class="section-title">Kenapa harus pakai <span class="blue">Tiv Downloader</span>?</h2>
+    <p class="section-desc">Tiv Downloader adalah alat bantu untuk menyimpan video TikTok ke perangkat kamu — tanpa watermark yang mengganggu, dengan kualitas maksimal yang disediakan sumber video.</p>
+    <p class="section-desc">Semua berjalan langsung di browser kamu. Tanpa daftar akun, tanpa install aplikasi, tanpa iklan yang mengganggu. Cukup tempel link, dan simpan.</p>
+    <div class="feature-cards">
+      <div class="feature-card">
+        <div class="feature-icon">💧</div>
+        <h3>Bebas Watermark</h3>
+        <p>Video yang diunduh bersih dari logo dan username overlay. Cocok untuk edit, arsip pribadi, atau referensi konten kreatif.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎬</div>
+        <h3>Full HD Quality</h3>
+        <p>Ambil video pada resolusi tertinggi yang tersedia — HD, Full HD, atau 4K jika sumber video menyediakannya.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Cepat & Gratis</h3>
+        <p>Tidak ada batasan jumlah download, tidak ada akun, tidak ada biaya tersembunyi. Buka, tempel, download.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: STEPS -->
+<section class="alt reveal">
+  <div class="container-wide">
+    <div class="section-label">Cara Pakai</div>
+    <h2 class="section-title">Cara download video TikTok<br>di <span class="red">Tiv Downloader</span></h2>
+    <p class="section-desc">Ikuti 4 langkah mudah berikut. Tidak butuh skill khusus — siapapun bisa.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Salin Link Video TikTok</h3>
+          <p>Buka aplikasi TikTok, pilih video yang mau diunduh, tap tombol <strong>Bagikan (Share)</strong>, lalu pilih <strong>Salin Tautan (Copy Link)</strong>.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Tempel Link di Kolom Input</h3>
+          <p>Balik ke halaman ini, tempel link tadi di kolom input paling atas. Bisa pakai tombol <strong>📋 Paste</strong> biar lebih cepat.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Klik Tombol Download</h3>
+          <p>Setelah link ditempel, klik <strong>Download</strong>. Tunggu sebentar — sistem akan memproses video dan menampilkan preview.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Pilih Kualitas & Simpan</h3>
+          <p>Pilih <strong>HD</strong> (tanpa watermark) atau <strong>SD</strong>. Klik tombol download — file otomatis tersimpan ke perangkat kamu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: PANDUAN -->
+<section class="reveal">
+  <div class="container-wide">
+    <div class="section-label">Panduan Lengkap</div>
+    <h2 class="section-title">Panduan & <span class="blue">Tips Pro</span></h2>
+    <p class="section-desc">Beberapa tips supaya pengalaman download kamu makin lancar dan hasilnya maksimal.</p>
+    <ul class="tips-list">
+      <li><strong>Selalu pakai "Salin Tautan"</strong> dari aplikasi TikTok langsung — bukan URL dari browser. Ini memastikan link valid dan lengkap.</li>
+      <li><strong>Pilih opsi HD</strong> kalau mau kualitas maksimal. Untuk hemat kuota, pilih SD.</li>
+      <li><strong>Untuk audio saja</strong> (buat backsound atau sound viral), langsung ke tab MP3 dan tempel link-nya.</li>
+      <li><strong>Batch download</strong> bisa dipakai kalau mau unduh banyak video sekaligus — tempel satu link per baris.</li>
+      <li><strong>Kalau gagal</strong>, pastikan akun TikTok-nya publik (bukan private). Video dari akun private tidak bisa diunduh.</li>
+      <li><strong>Riwayat download</strong> tersimpan di perangkat kamu, bisa cek ulang kapan aja tanpa koneksi.</li>
+      <li><strong>Gunakan untuk keperluan pribadi.</strong> Kalau mau reupload, minta izin kreator dulu — itu etika yang benar.</li>
+      <li><strong>Bookmark halaman ini</strong> biar nggak perlu nyari-nyari lagi kalau butuh download video.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SECTION: DEV -->
+<section class="alt reveal">
+  <div class="container-wide">
+    <div class="section-label">Developer</div>
+    <h2 class="section-title">Tentang <span class="red">Pembuat</span></h2>
+    <div class="dev-card">
+      <div class="dev-avatar">👨‍💻</div>
+      <div class="dev-name">PANN</div>
+      <div class="dev-role">Developer · Designer · Creator</div>
+      <div class="dev-badges">
+        <span class="dev-badge">🎨 UI/UX</span>
+        <span class="dev-badge">💻 Frontend</span>
+        <span class="dev-badge">🚀 Builder</span>
+      </div>
+      <p class="dev-desc">Tiv Downloader dibuat dengan teknologi web modern — HTML, CSS, dan JavaScript murni. Tanpa framework berat, tanpa backend. Semua berjalan langsung di browser kamu, cepat dan aman.</p>
+      <div class="dev-links">
+        <a href="games.html" class="dev-link">🎮 Coba Games</a>
+        <a href="tools.html" class="dev-link secondary">🛠️ Coba Tools</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: FAQ -->
+<section class="reveal">
+  <div class="container-wide">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Pertanyaan <span class="red">Umum</span></h2>
+    <p class="section-desc">Hal-hal yang sering ditanyakan pengguna Tiv Downloader.</p>
+    <div style="margin-top: 28px;">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Apakah Tiv Downloader gratis?</div>
+        <div class="faq-a">Ya, 100% gratis. Tidak ada iklan, tidak ada login, tidak ada batasan jumlah download.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Apakah video saya disimpan di server?</div>
+        <div class="faq-a">Tidak. File langsung dikirim ke perangkat kamu. Kami tidak menyimpan apa-apa.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Kenapa video gagal diunduh?</div>
+        <div class="faq-a">Kemungkinan akun private, atau video sudah dihapus. Coba video lain yang publik.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Apakah legal mengunduh video TikTok?</div>
+        <div class="faq-a">Untuk keperluan pribadi, umumnya boleh. Jangan reupload tanpa izin kreator — itu melanggar hak cipta dan etika.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Bisa download audio saja?</div>
+        <div class="faq-a">Bisa. Klik tab MP3, tempel link, lalu klik Ambil MP3.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Butuh install aplikasi?</div>
+        <div class="faq-a">Tidak. Cukup browser di HP atau PC. Bahkan bisa diinstall sebagai PWA — bakal muncul banner "Install" di atas.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Ada fitur lain selain download?</div>
+        <div class="faq-a">Ada. Cek halaman <strong>Games</strong> (4 game) dan <strong>Tools</strong> (6 tools) lewat menu di kanan atas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Beranda</a>
+    <a href="games.html">Games</a>
+    <a href="tools.html">Tools</a>
+    <a href="#" onclick="openModal('aboutModal'); return false;">Tentang</a>
+    <a href="#" onclick="openModal('disclaimerModal'); return false;">Disclaimer</a>
+  </div>
+  <div class="dev-credit">👨‍💻 Developer: <span>PANN</span></div>
+  <div>© <span id="year">2026</span> Tiv Downloader · Dibuat dengan ❤️</div>
+</footer>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav" id="bottomNav">
+  <button class="nav-item active" data-nav="video" onclick="switchTab('video')">
+    <span class="nav-item-icon">🎬</span><span>Video</span>
+  </button>
+  <button class="nav-item" data-nav="audio" onclick="switchTab('audio')">
+    <span class="nav-item-icon">🎵</span><span>MP3</span>
+  </button>
+  <button class="nav-item" data-nav="batch" onclick="switchTab('batch')">
+    <span class="nav-item-icon">📦</span><span>Batch</span>
+  </button>
+  <button class="nav-item" data-nav="history" onclick="switchTab('history')">
+    <span class="nav-item-icon">🕐</span><span>Riwayat</span>
+  </button>
+</nav>
+
+<!-- LOADING OVERLAY -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-spinner-big"></div>
+  <div class="loading-text" id="loadingText">MEMPROSES...</div>
+  <div class="loading-progress"><div class="loading-progress-fill" id="loadingProgress"></div></div>
+</div>
+
+<!-- ACHIEVEMENT -->
+<div class="achievement" id="achievement">
+  <span class="achievement-icon">🏆</span>
+  <span id="achievementText">Berhasil!</span>
+</div>
+
+<!-- MODAL: ABOUT -->
+<div class="modal-backdrop" id="aboutModal">
+  <div class="modal">
+    <h3>✦ Tentang Tiv Downloader</h3>
+    <p><strong>Tiv Downloader</strong> adalah alat bantu download video TikTok tanpa watermark, MP3, dan slide foto.</p>
+    <p>Dibuat oleh <strong>PANN</strong> — semua berjalan di browser Anda, tanpa login, tanpa iklan, tanpa tracking.</p>
+    <p style="font-size: 12px; color: var(--text-dim);">Versi 10.0 · TIV Series</p>
+    <button class="btn btn-block" style="margin-top: 14px;" onclick="closeModal('aboutModal')">Tutup</button>
+  </div>
+</div>
+
+<!-- MODAL: DISCLAIMER -->
+<div class="modal-backdrop" id="disclaimerModal">
+  <div class="modal">
+    <h3>⚠️ Disclaimer</h3>
+    <p>• Web ini hanya alat bantu unduh untuk penggunaan pribadi.</p>
+    <p>• Hormati hak cipta kreator. Jangan reupload tanpa izin.</p>
+    <p>• Kami tidak menyimpan link atau file Anda.</p>
+    <p>• Semua proses berjalan langsung di browser Anda.</p>
+    <button class="btn btn-block" style="margin-top: 14px;" onclick="closeModal('disclaimerModal')">Saya Mengerti</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+       </html>
