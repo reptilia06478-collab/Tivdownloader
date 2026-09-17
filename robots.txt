@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://reptilia06478-collab.github.io/Tivdownloadloader/sitemap.xml
